@@ -29,7 +29,7 @@ test('ReplaceMe.vue component text prop accepts a string value', async () => {
 
 
 
-/*test('ReplaceMe.vue component default slot accepts an element node with a child text node', async () => {
+test('ReplaceMe.vue component default slot accepts an element node with a child text node', async () => {
 
     const testStrLiteral = `<div>Test String Value</div>`
 
@@ -41,4 +41,4 @@ test('ReplaceMe.vue component text prop accepts a string value', async () => {
 
     expect(wrapper.html()).toContain(testStrLiteral)
     
-})*/
+})
