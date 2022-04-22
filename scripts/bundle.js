@@ -15,3 +15,7 @@ fs.remove('./dist/main.d.ts')
 
 
 fs.move('./dist/ViteVueTsCompoPkgStarter.vue.d.ts', './dist/src/ViteVueTsCompoPkgStarter.vue.d.ts')
+
+console.log(' ')
+console.log('*\\o/* ./scripts/bundle.js run complete! *\\o/*')
+console.log(' ')
