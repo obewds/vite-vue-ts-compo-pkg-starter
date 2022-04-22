@@ -8,7 +8,7 @@
     // This starter template is using Vue 3 <script setup> SFCs
     // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
-    import ReplaceMe from '../ReplaceMe.vue'
+    import ViteVueTsCompoPkgStarter from '../ViteVueTsCompoPkgStarter.vue'
 
 </script>
 
@@ -19,7 +19,7 @@
     
     <div class="bg-white text-center border-t-2 border-b-2 border-green-500 border-dashed py-24">
 
-        <ReplaceMe/>
+        <ViteVueTsCompoPkgStarter/>
 
     </div>
 

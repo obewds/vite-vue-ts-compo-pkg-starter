@@ -7,44 +7,8 @@ head:
 
 
 
-# ReplaceMe.vue Component
 
-
-
-<!--
-## Vue Component Code
-
-Pure Vue.js version
-
-<<< @/../src/ReplaceMe.vue
-
-
-
-
-## ES Module Code
-
-Version used by Rollup and Webpack
-
-<<< @/../dist/ReplaceMe.esm.js
-
-
-
-
-## SSR (CJS) Code
-
-Version used by Node.js (Common.js)
-
-<<< @/../dist/ReplaceMe.ssr.js
-
-
-
-
-## IIFE (Browser) Code
-
-Version used for browser instances
-
-<<< @/../dist/ReplaceMe.iife.js
--->
+# ViteVueTsCompoPkgStarter.vue Component
 
 
 
@@ -53,7 +17,7 @@ Version used for browser instances
 
 Pure Vue.js version
 
-<<< @/../src/ReplaceMe.vue
+<<< @/../src/ViteVueTsCompoPkgStarter.vue
 
 
 
@@ -62,7 +26,7 @@ Pure Vue.js version
 
 ESM version
 
-<<< @/../dist/vite-vue-ts-compo-pkg-starter.es.js
+<<< @/../dist/ViteVueTsCompoPkgStarter.es.js
 
 
 
@@ -71,7 +35,7 @@ ESM version
 
 Version used by Node.js (Universal version for Common.js/AMD)
 
-<<< @/../dist/vite-vue-ts-compo-pkg-starter.umd.js
+<<< @/../dist/ViteVueTsCompoPkgStarter.umd.js
 
 
 
@@ -80,7 +44,7 @@ Version used by Node.js (Universal version for Common.js/AMD)
 
 CommonJS version
 
-<<< @/../dist/vite-vue-ts-compo-pkg-starter.cjs.js
+<<< @/../dist/ViteVueTsCompoPkgStarter.cjs.js
 
 
 
@@ -89,5 +53,5 @@ CommonJS version
 
 Version used for browser instances
 
-<<< @/../dist/vite-vue-ts-compo-pkg-starter.iife.js
+<<< @/../dist/ViteVueTsCompoPkgStarter.iife.js
 

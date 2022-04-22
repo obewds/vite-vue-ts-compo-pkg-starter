@@ -2,8 +2,8 @@
 
 module.exports = {
     base: '/vite-vue-ts-compo-pkg-starter/',
-    title: 'ReplaceMe.vue',
-    description: 'A documentation site for the ReplaceMe component',
+    title: 'ViteVueTsCompoPkgStarter.vue',
+    description: 'A documentation site for the ViteVueTsCompoPkgStarter component',
     markdown: {
       lineNumbers: true,
     },

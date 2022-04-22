@@ -271,7 +271,7 @@
                     <FieldsetStep
                         :code-classes="codeClasses"
                         :step-number="2"
-                        find-string="ReplaceMe"
+                        find-string="ViteVueTsCompoPkgStarter"
                         :replace-string="newCompoName"
                     >
 
@@ -353,7 +353,7 @@
 
                             <template #label>
                                 <label for="checbox-2-7" :class="checkLabels">
-                                    ./src/ReplaceMe.vue
+                                    ./src/ViteVueTsCompoPkgStarter.vue
                                 </label>
                             </template>
 
@@ -377,7 +377,7 @@
 
                             <template #label>
                                 <label for="checbox-2-9" :class="checkLabels">
-                                    ./tests/ReplaceMe.js
+                                    ./tests/ViteVueTsCompoPkgStarter.test.js
                                 </label>
                             </template>
 
@@ -391,7 +391,7 @@
                     <FieldsetStep
                         :code-classes="codeClasses"
                         :step-number="3"
-                        find-string="replace-me"
+                        find-string="vite-vue-ts-compo-pkg-starter"
                         :replace-string="newRepoName"
                     >
 
@@ -418,7 +418,7 @@
 
                         <template #legend>
                             Change the file names containing the string:<br>
-                            <code :class="codeClasses">ReplaceMe</code><br>
+                            <code :class="codeClasses">ViteVueTsCompoPkgStarter</code><br>
                             to the string:<br>
                             <code :class="codeClasses">{{ newCompoName }}</code><br>
                             in the following file(s):
@@ -430,7 +430,7 @@
 
                             <template #label>
                                 <label for="checbox-4-1" :class="checkLabels">
-                                    <span class="text-black">./src/ReplaceMe.vue &gt;</span> ./src/{{ newCompoName }}.vue
+                                    <span class="text-black">./src/ViteVueTsCompoPkgStarter.vue &gt;</span> ./src/{{ newCompoName }}.vue
                                 </label>
                             </template>
 
@@ -442,7 +442,7 @@
 
                             <template #label>
                                 <label for="checbox-4-2" :class="checkLabels">
-                                    <span class="text-black">./tests/ReplaceMe.test.js &gt;</span> ./tests/{{ newCompoName }}.test.js
+                                    <span class="text-black">./tests/ViteVueTsCompoPkgStarter.test.js &gt;</span> ./tests/{{ newCompoName }}.test.js
                                 </label>
                             </template>
 

@@ -6,9 +6,9 @@ head:
 ---
 
 
-# ReplaceMe.vue
+# ViteVueTsCompoPkgStarter.vue
 
-Welcome to the docs page for OBE:WDS's `ReplaceMe.vue` component for [Vue.js](https://vuejs.org/)!
+Welcome to the docs page for OBE:WDS's `ViteVueTsCompoPkgStarter.vue` component for [Vue.js](https://vuejs.org/)!
 
 
 
@@ -16,7 +16,7 @@ Welcome to the docs page for OBE:WDS's `ReplaceMe.vue` component for [Vue.js](ht
 ## Installation
 
 ```bash
-npm install @obewds/replace-me --save-dev
+npm install @obewds/vite-vue-ts-compo-pkg-starter --save-dev
 ```
 
 
@@ -31,7 +31,7 @@ npm install @obewds/replace-me --save-dev
 
 ```html{3}
 <template>
-    <ReplaceMe/>
+    <ViteVueTsCompoPkgStarter/>
 </template>
 ```
 
@@ -42,7 +42,7 @@ npm install @obewds/replace-me --save-dev
 
 ```html{3}
 <script setup>
-    import ReplaceMe from '@obewds/replace-me'
+    import ViteVueTsCompoPkgStarter from '@obewds/vite-vue-ts-compo-pkg-starter'
 </script>
 ```
 
@@ -54,10 +54,10 @@ npm install @obewds/replace-me --save-dev
 ```html{4,9}
 <script>
     import { defineComponent } from 'vue'
-    import ReplaceMe from '@obewds/replace-me'
+    import ViteVueTsCompoPkgStarter from '@obewds/vite-vue-ts-compo-pkg-starter'
 
     export default defineComponent({
-        components: { ReplaceMe }
+        components: { ViteVueTsCompoPkgStarter }
     })
 </script>
 ```
@@ -79,7 +79,7 @@ npm install @obewds/replace-me --save-dev
 
 ```html{2}
 <template>
-    <ReplaceMe text="My text prop string"/>
+    <ViteVueTsCompoPkgStarter text="My text prop string"/>
 </template>
 ```
 
@@ -105,9 +105,9 @@ If both the `text` prop and `slot` content are used, then the `text` prop takes 
 
 ```html{2-4}
 <template>
-    <ReplaceMe>
+    <ViteVueTsCompoPkgStarter>
         My slot content
-    </ReplaceMe>
+    </ViteVueTsCompoPkgStarter>
 </template>
 ```
 
@@ -127,7 +127,7 @@ If both the `text` prop and `slot` content are used, then the `text` prop takes 
 ## Uninstall
 
 ```bash
-npm uninstall @obewds/replace-me
+npm uninstall @obewds/vite-vue-ts-compo-pkg-starter
 ```
 
 
