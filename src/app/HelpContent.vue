@@ -6,26 +6,27 @@
 <script setup>
 
     import { computed, ref } from 'vue'
-    import CheckboxBlock from './CheckboxBlock.vue'
-    import FieldsetBlock from './FieldsetBlock.vue'
-    import FieldsetStep from './FieldsetStep.vue'
-    import StepHeading from './StepHeading.vue'
+    // import CheckboxBlock from './CheckboxBlock.vue'
+    // import FieldsetBlock from './FieldsetBlock.vue'
+    // import FieldsetStep from './FieldsetStep.vue'
+    // import StepHeading from './StepHeading.vue'
 
     
     // setup static values
     const more = 'more things'
     const less = 'less things'
-    const toDosWip = 'DOING THE THINGS'
+    const toDosWip = 'STARTING THE THINGS'
     const toDosDone = 'DID THE THINGS'
-    const btnClasses = 'inline text-white rounded px-2 py-1'
+    const btnClasses = 'inline text-white rounded px-2 py-1 shadow'
     const btnStyle = 'background-color:#42b983;'
-    const checkboxClasses = 'focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded'
-    const checkLabels = 'text-green-700'
-    const codeClasses = 'bg-gray-100 text-green-700 selection:bg-green-500 selection:text-white px-1'
+    // const checkboxClasses = 'focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded'
+    // const checkLabels = 'text-green-700'
+    // const codeClasses = 'bg-gray-100 text-green-700 selection:bg-green-500 selection:text-white px-1'
     const flexColSect = 'flex flex-col space-y-2'
     const h2Classes = 'text-lg font-bold'
     const imgClasses = 'w-24 mx-auto sm:mx-0'
-    const inputClasses = 'focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md'
+    const inputClasses = 'focus:ring-green-500 focus:border-green-500 block w-full shadow-sm border-gray-300 rounded-md'
+    const readonlyInputClasses = 'focus:ring-lime-500 focus:border-lime-500 block w-full shadow-sm border-black bg-gray-800 text-lime-400 rounded-md selection:bg-lime-400 selection:text-black'
     const linkStyle = 'color:#42b983;'
 
     
@@ -40,7 +41,7 @@
     
     // setup reactive values
     const count = ref(0)
-    const check_1_1 = ref(checkLocalStoreChecks('checbox-1-1'))
+    /*const check_1_1 = ref(checkLocalStoreChecks('checbox-1-1'))
     const check_1_2 = ref(checkLocalStoreChecks('checbox-1-2'))
     const check_1_3 = ref(checkLocalStoreChecks('checbox-1-3'))
     const check_2_1 = ref(checkLocalStoreChecks('checbox-2-1'))
@@ -62,7 +63,7 @@
     const check_7_1 = ref(checkLocalStoreChecks('checbox-7-1'))
     const check_8_1 = ref(checkLocalStoreChecks('checbox-8-1'))
     const check_8_2 = ref(checkLocalStoreChecks('checbox-8-2'))
-    const check_9_1 = ref(checkLocalStoreChecks('checbox-9-1'))
+    const check_9_1 = ref(checkLocalStoreChecks('checbox-9-1'))*/
     const newRepoName = ref(storedRepoName)
     const showDocs = ref(false)
     const showDocsBtnText = ref(more)
@@ -80,7 +81,7 @@
 
     
     // setup computed values
-    const newCompoName = computed(() => {
+    /*const newCompoName = computed(() => {
         function capitalize(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
@@ -90,6 +91,12 @@
             return capitalized.join('')
         }
         return pascalize(newRepoName.value)
+    })*/
+
+    
+    // setup computed values
+    const newRepoCommand = computed(() => {
+        return 'npm run init:as -- --' + newRepoName.value
     })
 
     
@@ -116,7 +123,7 @@
         }
     }
 
-    function updateCheckboxStatus(event){
+    /*function updateCheckboxStatus(event){
         const status = event.target.checked ? 'checked' : ''
         if (status === 'checked') {
             localStorage.setItem(event.target.id, status)
@@ -127,10 +134,10 @@
         if (localStorage.length === 24) {
             toDosHeadline.value = toDosDone
         }
-    }
+    }*/
 
     function reset(){
-        const checksArr = [
+        /*const checksArr = [
             'checbox-1-1', 'checbox-1-2', 'checbox-1-3',
             'checbox-2-1', 'checbox-2-2', 'checbox-2-3', 'checbox-2-4', 'checbox-2-5', 'checbox-2-6', 'checbox-2-7', 'checbox-2-8', 'checbox-2-9',
             'checbox-3-1',
@@ -145,8 +152,8 @@
             if (localStorage) {
                 localStorage.removeItem(checksArr[i])
             }
-        }
-        check_1_1.value = false
+        }*/
+        /*check_1_1.value = false
         check_1_2.value = false
         check_1_3.value = false
         check_2_1.value = false
@@ -168,7 +175,7 @@
         check_7_1.value = false
         check_8_1.value = false
         check_8_2.value = false
-        check_9_1.value = false
+        check_9_1.value = false*/
         if (localStorage) {
             localStorage.removeItem('repoName')
         }
@@ -212,14 +219,19 @@
                 <div class="flex flex-col space-y-1">
                     <label for="new-repo-name">New Repo Name:</label>
                     <input type="text" id="new-repo-name" v-model="newRepoName" :class="inputClasses" @input="updateRepoName($event)"/>
-                    <small class="opacity-60">This is usually the GitHub repository name for the component in kebab-case-syntax</small>
+                    <small class="opacity-70">Usually the component GitHub repository name (in kebab-case-syntax)</small>
                 </div>
 
-                <div class="pt-4" v-if="newRepoName">
+                <div class="flex flex-col space-y-1 py-4">
+                    <label for="new-repo-command">Initialize Files Command:</label>
+                    <input type="text" id="new-repo-command" v-model="newRepoCommand" :class="readonlyInputClasses" @input="updateRepoName($event)" readonly/>
+                    <small class="opacity-70">Run this command (from root) to setup this template and start testing/developing your new Vue/TypeScript component!</small>
+                </div>
 
-                    <hr/>
+                <div v-if="newRepoName">
 
-                    <!-- step 1 -->
+                    <!--hr/>
+
                     <FieldsetStep
                         :code-classes="codeClasses"
                         :step-number="1"
@@ -267,7 +279,6 @@
 
                     <hr/>
 
-                    <!-- step 2 -->
                     <FieldsetStep
                         :code-classes="codeClasses"
                         :step-number="2"
@@ -387,7 +398,6 @@
 
                     <hr/>
 
-                    <!-- step 3 -->
                     <FieldsetStep
                         :code-classes="codeClasses"
                         :step-number="3"
@@ -411,7 +421,6 @@
 
                     <hr/>
 
-                    <!-- step 4 -->
                     <StepHeading>STEP: 4</StepHeading>
 
                     <FieldsetBlock>
@@ -452,7 +461,6 @@
 
                     <hr/>
 
-                    <!-- step 5 -->
                     <div class="pb-4">
                     
                         <StepHeading>STEP: 5</StepHeading>
@@ -493,7 +501,6 @@
 
                     <hr/>
 
-                    <!-- step 6 -->
                     <div class="pb-4">
 
                         <StepHeading>STEP: 6</StepHeading>
@@ -534,7 +541,6 @@
 
                     <hr/>
 
-                    <!-- step 7 -->
                     <div class="pb-4">
 
                         <StepHeading>STEP: 7</StepHeading>
@@ -563,7 +569,6 @@
 
                     <hr/>
 
-                    <!-- step 8 -->
                     <div class="pb-4">
 
                         <StepHeading>STEP: 8</StepHeading>
@@ -604,8 +609,7 @@
 
                     <hr/>
 
-                    <!-- step 9 -->
-                    <div class="pb-4">
+                    <div-- class="pb-4">
 
                         <StepHeading>STEP: 9</StepHeading>
 
@@ -629,7 +633,7 @@
 
                         </div>
 
-                    </div>
+                    </div-->
 
                     <hr/>
 
@@ -639,7 +643,7 @@
                             :class="['bg-red-500', btnClasses]"
                             @click="reset()"
                         >
-                            reset all the things
+                            reset
                         </button>
                     </div>
 
@@ -670,19 +674,22 @@
 
             <ul>
                 <li>
+                    <a href="https://v3.vuejs.org/" target="_blank" :style="linkStyle" rel="noopener noreferrer">Vue 3 Docs</a>
+                </li>
+                <li>
                     <a href="https://vitejs.dev/guide/features.html" target="_blank" :style="linkStyle" rel="noopener noreferrer">Vite Docs</a>
                 </li>
                 <li>
-                    <a href="https://v3.vuejs.org/" target="_blank" :style="linkStyle" rel="noopener noreferrer">Vue 3 Docs</a>
+                    <a href="https://www.typescriptlang.org/docs/" target="_blank" :style="linkStyle" rel="noopener noreferrer">TypeScript Docs</a>
+                </li>
+                <li>
+                    <a href="https://vitest.dev/" target="_blank" :style="linkStyle" rel="noopener noreferrer">Vitest Docs</a>
                 </li>
                 <li>
                     <a href="https://tailwindcss.com/docs/" target="_blank" :style="linkStyle" rel="noopener noreferrer">Tailwind CSS Docs</a>
                 </li>
                 <li>
                     <a href="https://rollupjs.org/guide/en/" target="_blank" :style="linkStyle" rel="noopener noreferrer">Rollup Docs</a>
-                </li>
-                <li>
-                    <a href="https://vitest.dev/" target="_blank" :style="linkStyle" rel="noopener noreferrer">Vitest Docs</a>
                 </li>
             </ul>
 

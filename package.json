@@ -18,7 +18,9 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "index.js",
+    "index.ts"
   ],
   "sideEffects": false,
   "scripts": {

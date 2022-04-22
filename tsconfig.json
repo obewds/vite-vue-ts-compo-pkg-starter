@@ -2,6 +2,7 @@
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "files": [
     "src/index.ts",
+    "index.ts",
   ],
   "compilerOptions": {
     "target": "esnext",
