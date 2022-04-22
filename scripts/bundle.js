@@ -1,4 +1,10 @@
+// ./scripts/bundle.js
+
 const fs = require('fs-extra')
+const helpers = require('./helpers.js')
+
+
+helpers.copyFileAndReplaceString('./src/index.ts', './dist/index.ts', 'ViteVueTsCompoPkgStarter.vue', 'src/ViteVueTsCompoPkgStarter.vue')
 
 
 fs.copySync('./src/ViteVueTsCompoPkgStarter.vue', './dist/src/ViteVueTsCompoPkgStarter.vue')
