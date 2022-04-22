@@ -5,7 +5,6 @@
   "author": "@oberocks",
   "homepage": "https://github.com/obewds/vite-vue-ts-compo-pkg-starter#readme",
   "license": "MIT",
-  "type": "module",
   "main": "./dist/ViteVueTsCompoPkgStarter.umd.js",
   "exports": {
     ".": {
