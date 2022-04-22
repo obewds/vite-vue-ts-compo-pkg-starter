@@ -5,15 +5,23 @@
   "author": "@oberocks",
   "homepage": "https://github.com/obewds/vite-vue-ts-compo-pkg-starter#readme",
   "license": "MIT",
-  "main": "dist/ReplaceMe.ssr.js",
-  "module": "dist/ReplaceMe.esm.js",
-  "browser": "dist/ReplaceMe.iife.js",
+  "main": "./dist/vite-vue-ts-compo-pkg-starter.umd.js",
+  "module": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
+  "browser": "./dist/vite-vue-ts-compo-pkg-starter.iife.js",
   "files": [
     "dist",
     "src/ReplaceMe.vue"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
+      "require": "./dist/vite-vue-ts-compo-pkg-starter.umd.js",
+      "browser": {
+        "default": "./dist/vite-vue-ts-compo-pkg-starter.iife.js"
+      }
+    }
+  },
   "sideEffects": false,
-
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -24,6 +32,7 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs --port 8080",
     "pkg:rollup": "rollup -c",
+    "pkg:types": "vue-tsc --declaration --emitDeclarationOnly",
     "pkg:org": "npm config set scope obewds",
     "pkg:login": "npm adduser",
     "pkg:publish": "npm publish --access public",
@@ -31,8 +40,12 @@
     "publish:package": "npm run publish:prep && npm run pkg:org && npm run pkg:login && npm run pkg:publish",
     "init:as": "node init.js"
   },
+  "dependencies": {
+    "vite-vue-ts-compo-pkg-starter": "./vite-vue-ts-compo-pkg-starter-0.1.0.tgz"
+  },   
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.2.1",
+    "@rollup/plugin-typescript": "^8.3.2",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/line-clamp": "^0.3.1",

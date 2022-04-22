@@ -1,20 +1,21 @@
-<template>
+<script setup lang="ts">
 
-    <div>
-        <template v-if="text">
-            {{ text }}
-        </template>
-        <template v-else>
-            <slot>ReplaceMe</slot>
-        </template>
-    </div>
+    type ReplaceMeProps = {
+        text?: string | undefined
+    }
 
-</template>
+    const props = withDefaults(
+        defineProps<ReplaceMeProps>(), {
+            text: ''
+        }
+    )
 
+    // Example using TypeScript generic (with angular bracket)
+    // const props = defineProps<{
+    //     text: String
+    // }>()
 
-<script lang="ts">
-
-    import { defineComponent } from 'vue'
+    /*import { defineComponent } from 'vue'
 
     export default defineComponent({
 
@@ -31,6 +32,20 @@
 
         // setup(){},
 
-    })
+    })*/ 
 
 </script>
+
+
+<template>
+
+    <div>
+        <template v-if="text">
+            {{ text }}
+        </template>
+        <template v-else>
+            <slot>ReplaceMe</slot>
+        </template>
+    </div>
+
+</template>

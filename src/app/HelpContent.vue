@@ -3,6 +3,182 @@
 -->
 
 
+<script setup>
+
+    import { computed, ref } from 'vue'
+    import CheckboxBlock from './CheckboxBlock.vue'
+    import FieldsetBlock from './FieldsetBlock.vue'
+    import FieldsetStep from './FieldsetStep.vue'
+    import StepHeading from './StepHeading.vue'
+
+    
+    // setup static values
+    const more = 'more things'
+    const less = 'less things'
+    const toDosWip = 'DOING THE THINGS'
+    const toDosDone = 'DID THE THINGS'
+    const btnClasses = 'inline text-white rounded px-2 py-1'
+    const btnStyle = 'background-color:#42b983;'
+    const checkboxClasses = 'focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded'
+    const checkLabels = 'text-green-700'
+    const codeClasses = 'bg-gray-100 text-green-700 selection:bg-green-500 selection:text-white px-1'
+    const flexColSect = 'flex flex-col space-y-2'
+    const h2Classes = 'text-lg font-bold'
+    const imgClasses = 'w-24 mx-auto sm:mx-0'
+    const inputClasses = 'focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md'
+    const linkStyle = 'color:#42b983;'
+
+    
+    // retrieve local storage values
+    let storedRepoName = localStorage && localStorage.getItem('repoName') !== undefined && localStorage.getItem('repoName') !== null ? localStorage.getItem('repoName') : ''
+    let toDosHeadlineText = localStorage && localStorage.length === 24 ? toDosDone : toDosWip
+
+    function checkLocalStoreChecks(key) {
+        return localStorage && localStorage.getItem(key) !== undefined && localStorage.getItem(key) === 'checked' ? true : false
+    }
+
+    
+    // setup reactive values
+    const count = ref(0)
+    const check_1_1 = ref(checkLocalStoreChecks('checbox-1-1'))
+    const check_1_2 = ref(checkLocalStoreChecks('checbox-1-2'))
+    const check_1_3 = ref(checkLocalStoreChecks('checbox-1-3'))
+    const check_2_1 = ref(checkLocalStoreChecks('checbox-2-1'))
+    const check_2_2 = ref(checkLocalStoreChecks('checbox-2-2'))
+    const check_2_3 = ref(checkLocalStoreChecks('checbox-2-3'))
+    const check_2_4 = ref(checkLocalStoreChecks('checbox-2-4'))
+    const check_2_5 = ref(checkLocalStoreChecks('checbox-2-5'))
+    const check_2_6 = ref(checkLocalStoreChecks('checbox-2-6'))
+    const check_2_7 = ref(checkLocalStoreChecks('checbox-2-7'))
+    const check_2_8 = ref(checkLocalStoreChecks('checbox-2-8'))
+    const check_2_9 = ref(checkLocalStoreChecks('checbox-2-9'))
+    const check_3_1 = ref(checkLocalStoreChecks('checbox-3-1'))
+    const check_4_1 = ref(checkLocalStoreChecks('checbox-4-1'))
+    const check_4_2 = ref(checkLocalStoreChecks('checbox-4-2'))
+    const check_5_1 = ref(checkLocalStoreChecks('checbox-5-1'))
+    const check_5_2 = ref(checkLocalStoreChecks('checbox-5-2'))
+    const check_6_1 = ref(checkLocalStoreChecks('checbox-6-1'))
+    const check_6_2 = ref(checkLocalStoreChecks('checbox-6-2'))
+    const check_7_1 = ref(checkLocalStoreChecks('checbox-7-1'))
+    const check_8_1 = ref(checkLocalStoreChecks('checbox-8-1'))
+    const check_8_2 = ref(checkLocalStoreChecks('checbox-8-2'))
+    const check_9_1 = ref(checkLocalStoreChecks('checbox-9-1'))
+    const newRepoName = ref(storedRepoName)
+    const showDocs = ref(false)
+    const showDocsBtnText = ref(more)
+    const showToDos = ref(true)
+    const showToDosBtnText = ref(less)
+    const toDosHeadline = ref(toDosHeadlineText)
+
+
+    // adjust states according if local storage data is complete on page load
+    if (localStorage.length === 24) {
+        toDosHeadline.value = toDosDone
+        showToDos.value = false
+        showToDosBtnText.value = more
+    }
+
+    
+    // setup computed values
+    const newCompoName = computed(() => {
+        function capitalize(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+        function pascalize (string) {
+            const words = string.split('-')
+            const capitalized = words.map(word => capitalize(word))
+            return capitalized.join('')
+        }
+        return pascalize(newRepoName.value)
+    })
+
+    
+    // setup interactive functionality
+    function showDocsSection(){
+        showDocs.value = !showDocs.value
+        showDocs.value === false ? showDocsBtnText.value = more : showDocsBtnText.value = less
+    }
+
+    function showToDosSection(){
+        showToDos.value = !showToDos.value
+        showToDos.value === false ? showToDosBtnText.value = more : showToDosBtnText.value = less
+    }
+
+    function updateRepoName(event){
+        if (event.target.value === '') {
+            localStorage.removeItem('repoName')
+            toDosHeadline.value = toDosWip
+        } else {
+            localStorage.setItem('repoName', newRepoName.value)
+        }
+        if (localStorage.length === 24) {
+            toDosHeadline.value = toDosDone
+        }
+    }
+
+    function updateCheckboxStatus(event){
+        const status = event.target.checked ? 'checked' : ''
+        if (status === 'checked') {
+            localStorage.setItem(event.target.id, status)
+        } else {
+            localStorage.removeItem(event.target.id)
+            toDosHeadline.value = toDosWip
+        }
+        if (localStorage.length === 24) {
+            toDosHeadline.value = toDosDone
+        }
+    }
+
+    function reset(){
+        const checksArr = [
+            'checbox-1-1', 'checbox-1-2', 'checbox-1-3',
+            'checbox-2-1', 'checbox-2-2', 'checbox-2-3', 'checbox-2-4', 'checbox-2-5', 'checbox-2-6', 'checbox-2-7', 'checbox-2-8', 'checbox-2-9',
+            'checbox-3-1',
+            'checbox-4-1', 'checbox-4-2',
+            'checbox-5-1', 'checbox-5-2',
+            'checbox-6-1', 'checbox-6-2',
+            'checbox-7-1',
+            'checbox-8-1', 'checbox-8-2',
+            'checbox-9-1',
+        ]
+        for (let i = 0; i < checksArr.length; i++) {
+            if (localStorage) {
+                localStorage.removeItem(checksArr[i])
+            }
+        }
+        check_1_1.value = false
+        check_1_2.value = false
+        check_1_3.value = false
+        check_2_1.value = false
+        check_2_2.value = false
+        check_2_3.value = false
+        check_2_4.value = false
+        check_2_5.value = false
+        check_2_6.value = false
+        check_2_7.value = false
+        check_2_8.value = false
+        check_2_9.value = false
+        check_3_1.value = false
+        check_4_1.value = false
+        check_4_2.value = false
+        check_5_1.value = false
+        check_5_2.value = false
+        check_6_1.value = false
+        check_6_2.value = false
+        check_7_1.value = false
+        check_8_1.value = false
+        check_8_2.value = false
+        check_9_1.value = false
+        if (localStorage) {
+            localStorage.removeItem('repoName')
+        }
+        newRepoName.value = ''
+        toDosHeadline.value = toDosWip
+    }
+
+</script>
+
+
 <template>
 
     <div class="w-full flex flex-col sm:flex-row justify-center text-center gap-8 pb-10 px-8">
@@ -165,7 +341,7 @@
 
                             <template #label>
                                 <label for="checbox-2-6" :class="checkLabels">
-                                    ./src/index.js
+                                    ./src/index.ts
                                 </label>
                             </template>
 
@@ -536,179 +712,3 @@
     </div>
 
 </template>
-
-
-<script setup>
-
-    import { computed, ref } from 'vue'
-    import CheckboxBlock from './CheckboxBlock.vue'
-    import FieldsetBlock from './FieldsetBlock.vue'
-    import FieldsetStep from './FieldsetStep.vue'
-    import StepHeading from './StepHeading.vue'
-
-    
-    // setup static values
-    const more = 'more things'
-    const less = 'less things'
-    const toDosWip = 'DOING THE THINGS'
-    const toDosDone = 'DID THE THINGS'
-    const btnClasses = 'inline text-white rounded px-2 py-1'
-    const btnStyle = 'background-color:#42b983;'
-    const checkboxClasses = 'focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded'
-    const checkLabels = 'text-green-700'
-    const codeClasses = 'bg-gray-100 text-green-700 selection:bg-green-500 selection:text-white px-1'
-    const flexColSect = 'flex flex-col space-y-2'
-    const h2Classes = 'text-lg font-bold'
-    const imgClasses = 'w-24 mx-auto sm:mx-0'
-    const inputClasses = 'focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md'
-    const linkStyle = 'color:#42b983;'
-
-    
-    // retrieve local storage values
-    let storedRepoName = localStorage && localStorage.getItem('repoName') !== undefined && localStorage.getItem('repoName') !== null ? localStorage.getItem('repoName') : ''
-    let toDosHeadlineText = localStorage && localStorage.length === 24 ? toDosDone : toDosWip
-
-    function checkLocalStoreChecks(key) {
-        return localStorage && localStorage.getItem(key) !== undefined && localStorage.getItem(key) === 'checked' ? true : false
-    }
-
-    
-    // setup reactive values
-    const count = ref(0)
-    const check_1_1 = ref(checkLocalStoreChecks('checbox-1-1'))
-    const check_1_2 = ref(checkLocalStoreChecks('checbox-1-2'))
-    const check_1_3 = ref(checkLocalStoreChecks('checbox-1-3'))
-    const check_2_1 = ref(checkLocalStoreChecks('checbox-2-1'))
-    const check_2_2 = ref(checkLocalStoreChecks('checbox-2-2'))
-    const check_2_3 = ref(checkLocalStoreChecks('checbox-2-3'))
-    const check_2_4 = ref(checkLocalStoreChecks('checbox-2-4'))
-    const check_2_5 = ref(checkLocalStoreChecks('checbox-2-5'))
-    const check_2_6 = ref(checkLocalStoreChecks('checbox-2-6'))
-    const check_2_7 = ref(checkLocalStoreChecks('checbox-2-7'))
-    const check_2_8 = ref(checkLocalStoreChecks('checbox-2-8'))
-    const check_2_9 = ref(checkLocalStoreChecks('checbox-2-9'))
-    const check_3_1 = ref(checkLocalStoreChecks('checbox-3-1'))
-    const check_4_1 = ref(checkLocalStoreChecks('checbox-4-1'))
-    const check_4_2 = ref(checkLocalStoreChecks('checbox-4-2'))
-    const check_5_1 = ref(checkLocalStoreChecks('checbox-5-1'))
-    const check_5_2 = ref(checkLocalStoreChecks('checbox-5-2'))
-    const check_6_1 = ref(checkLocalStoreChecks('checbox-6-1'))
-    const check_6_2 = ref(checkLocalStoreChecks('checbox-6-2'))
-    const check_7_1 = ref(checkLocalStoreChecks('checbox-7-1'))
-    const check_8_1 = ref(checkLocalStoreChecks('checbox-8-1'))
-    const check_8_2 = ref(checkLocalStoreChecks('checbox-8-2'))
-    const check_9_1 = ref(checkLocalStoreChecks('checbox-9-1'))
-    const newRepoName = ref(storedRepoName)
-    const showDocs = ref(false)
-    const showDocsBtnText = ref(more)
-    const showToDos = ref(true)
-    const showToDosBtnText = ref(less)
-    const toDosHeadline = ref(toDosHeadlineText)
-
-
-    // adjust states according if local storage data is complete on page load
-    if (localStorage.length === 24) {
-        toDosHeadline.value = toDosDone
-        showToDos.value = false
-        showToDosBtnText.value = more
-    }
-
-    
-    // setup computed values
-    const newCompoName = computed(() => {
-        function capitalize(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        }
-        function pascalize (string) {
-            const words = string.split('-')
-            const capitalized = words.map(word => capitalize(word))
-            return capitalized.join('')
-        }
-        return pascalize(newRepoName.value)
-    })
-
-    
-    // setup interactive functionality
-    function showDocsSection(){
-        showDocs.value = !showDocs.value
-        showDocs.value === false ? showDocsBtnText.value = more : showDocsBtnText.value = less
-    }
-
-    function showToDosSection(){
-        showToDos.value = !showToDos.value
-        showToDos.value === false ? showToDosBtnText.value = more : showToDosBtnText.value = less
-    }
-
-    function updateRepoName(event){
-        if (event.target.value === '') {
-            localStorage.removeItem('repoName')
-            toDosHeadline.value = toDosWip
-        } else {
-            localStorage.setItem('repoName', newRepoName.value)
-        }
-        if (localStorage.length === 24) {
-            toDosHeadline.value = toDosDone
-        }
-    }
-
-    function updateCheckboxStatus(event){
-        const status = event.target.checked ? 'checked' : ''
-        if (status === 'checked') {
-            localStorage.setItem(event.target.id, status)
-        } else {
-            localStorage.removeItem(event.target.id)
-            toDosHeadline.value = toDosWip
-        }
-        if (localStorage.length === 24) {
-            toDosHeadline.value = toDosDone
-        }
-    }
-
-    function reset(){
-        const checksArr = [
-            'checbox-1-1', 'checbox-1-2', 'checbox-1-3',
-            'checbox-2-1', 'checbox-2-2', 'checbox-2-3', 'checbox-2-4', 'checbox-2-5', 'checbox-2-6', 'checbox-2-7', 'checbox-2-8', 'checbox-2-9',
-            'checbox-3-1',
-            'checbox-4-1', 'checbox-4-2',
-            'checbox-5-1', 'checbox-5-2',
-            'checbox-6-1', 'checbox-6-2',
-            'checbox-7-1',
-            'checbox-8-1', 'checbox-8-2',
-            'checbox-9-1',
-        ]
-        for (let i = 0; i < checksArr.length; i++) {
-            if (localStorage) {
-                localStorage.removeItem(checksArr[i])
-            }
-        }
-        check_1_1.value = false
-        check_1_2.value = false
-        check_1_3.value = false
-        check_2_1.value = false
-        check_2_2.value = false
-        check_2_3.value = false
-        check_2_4.value = false
-        check_2_5.value = false
-        check_2_6.value = false
-        check_2_7.value = false
-        check_2_8.value = false
-        check_2_9.value = false
-        check_3_1.value = false
-        check_4_1.value = false
-        check_4_2.value = false
-        check_5_1.value = false
-        check_5_2.value = false
-        check_6_1.value = false
-        check_6_2.value = false
-        check_7_1.value = false
-        check_8_1.value = false
-        check_8_2.value = false
-        check_9_1.value = false
-        if (localStorage) {
-            localStorage.removeItem('repoName')
-        }
-        newRepoName.value = ''
-        toDosHeadline.value = toDosWip
-    }
-
-</script>

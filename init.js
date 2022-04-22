@@ -134,7 +134,7 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         //         ./docs/component.md
         //         ./docs/index.md
         //         ./docs/.vitepress/config.js
-        //         ./src/index.js
+        //         ./src/index.ts
         //         ./src/ReplaceMe.vue
         //         ./src/app/Workspace.vue
         //         ./tests/ReplaceMe.test.js
@@ -145,7 +145,7 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         replaceStringOcccurances('./docs/component.md', placeholderCompoName, pascalCompoName)
         replaceStringOcccurances('./docs/index.md', placeholderCompoName, pascalCompoName)
         replaceStringOcccurances('./docs/.vitepress/config.js', placeholderCompoName, pascalCompoName)
-        replaceStringOcccurances('./src/index.js', placeholderCompoName, pascalCompoName)
+        replaceStringOcccurances('./src/index.ts', placeholderCompoName, pascalCompoName)
         // replaceStringOcccurances('./src/ReplaceMe.vue', placeholderCompoName, pascalCompoName)
         replaceStringOcccurances('./src/app/Workspace.vue', placeholderCompoName, pascalCompoName)
         // replaceStringOcccurances('./tests/ReplaceMe.test.js', placeholderCompoName, pascalCompoName)

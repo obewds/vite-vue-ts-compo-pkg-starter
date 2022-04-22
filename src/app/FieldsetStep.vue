@@ -3,30 +3,7 @@
 -->
 
 
-<template>
-
-    <StepHeading>
-        STEP {{ stepNumber }}:
-    </StepHeading>
-
-    <FieldsetBlock>
-
-        <template #legend>
-            Find &amp; replace all occurances of the string:<br>
-            <code :class="codeClasses">{{ findString }}</code><br>
-            with the string:<br>
-            <code :class="codeClasses">{{ replaceString }}</code><br>
-            in the following file(s):
-        </template>
-
-        <slot/>
-
-    </FieldsetBlock>
-
-</template>
-
-
-<script setup>
+<script setup lang="ts">
 
     import FieldsetBlock from './FieldsetBlock.vue'
     import StepHeading from './StepHeading.vue'
@@ -51,3 +28,26 @@
     })
 
 </script>
+
+
+<template>
+
+    <StepHeading>
+        STEP {{ stepNumber }}:
+    </StepHeading>
+
+    <FieldsetBlock>
+
+        <template #legend>
+            Find &amp; replace all occurances of the string:<br>
+            <code :class="codeClasses">{{ findString }}</code><br>
+            with the string:<br>
+            <code :class="codeClasses">{{ replaceString }}</code><br>
+            in the following file(s):
+        </template>
+
+        <slot/>
+
+    </FieldsetBlock>
+
+</template>
