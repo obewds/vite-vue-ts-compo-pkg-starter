@@ -32,7 +32,7 @@
     "docs:serve": "vitepress serve docs --port 8080",
     "pkg:rollup": "rollup -c",
     "pkg:declarations": "vue-tsc --declaration --emitDeclarationOnly",
-    "pkg:bundle": "npm run build && npm run pkg:declarations && node scripts/bundle.js",
+    "pkg:bundle": "npx rimraf dist && npm run build && npm run pkg:declarations && node scripts/bundle.js && npm run docs:build",
     "pkg:org": "npm config set scope obewds",
     "pkg:login": "npm adduser",
     "pkg:publish": "npm publish --access public",

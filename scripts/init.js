@@ -1,4 +1,7 @@
+// ./scripts/init.js
+
 const fs = require('fs-extra')
+const helpers = require('./helpers.js')
 
 
 
@@ -12,70 +15,6 @@ const scriptArguments = process.argv.slice(2)
 
 
 
-const replaceStringOcccurances = async function (filePathString, stringToReplace, replacementString) {
-    
-    fs.readFile(filePathString, 'utf8', function (err,data) {
-
-        if (err) {
-            console.log(err)
-            return false
-        }
-
-        const regex = new RegExp(`\\b${stringToReplace}\\b`, 'g') // using boundries and case sensitive matching
-
-        const result = data.replace(regex, replacementString);
-
-        fs.writeFile(filePathString, result, 'utf8', function (err) {
-            if (err) {
-                console.log(err)
-                return false
-            }
-            console.log(filePathString + ' was successfully modified!')
-            return true
-        })
-
-    })
-
-}
-
-const renameFile = async function (filePathString, renamedFilePathString) {
-
-    fs.rename(filePathString, renamedFilePathString, function(err) {
-
-        if ( err ) {
-            console.log('ERROR: ' + err)
-            return false
-        }
-
-        console.log(filePathString + ' was successfully changed to ' + renamedFilePathString + '!')
-        return true
-
-    })
-
-}
-
-const renameFileAndReplaceString = async function (filePathString, renamedFilePathString, stringToReplace, replacementString) {
-    try {
-        await renameFile(filePathString, renamedFilePathString)
-        replaceStringOcccurances(renamedFilePathString, stringToReplace, replacementString)
-    } catch (err) {
-        console.error(err)
-    }
-}
-
-function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-function pascalize (string) {
-    const words = string.split('-')
-    const capitalized = words.map(word => capitalize(word))
-    return capitalized.join('')
-}
-
-
-
-
 let repoName = ''
 
 if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
@@ -85,17 +24,17 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
     // update all files
     if (repoName) {
 
-        const pascalCompoName = pascalize(repoName)
+        const pascalCompoName = helpers.pascalize(repoName)
 
         // 'test-completed'
         // testing code
         
         // rename filenames
-        renameFileAndReplaceString('./ZedTest.vue', './' + pascalCompoName + '.vue', 'this-is-a-test', repoName)
+        helpers.renameFileAndReplaceString('./ZedTest.vue', './' + pascalCompoName + '.vue', 'this-is-a-test', repoName)
 
         // replace all placeholder strings in files with kebob case repo name
-        replaceStringOcccurances('./z-test.js', 'this-is-a-test', repoName)
-        replaceStringOcccurances('./z-test.md', 'this-is-a-test', repoName)
+        helpers.replaceStringOcccurances('./z-test.js', 'this-is-a-test', repoName)
+        helpers.replaceStringOcccurances('./z-test.md', 'this-is-a-test', repoName)
 
 
         // actual prod code (careful when uncommenting!)
@@ -118,9 +57,9 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
 
 
         // replace all placeholder strings in files with kebob case repo name
-        replaceStringOcccurances('./package.json', placeholderRepoName, repoName)
-        replaceStringOcccurances('./README.md', placeholderRepoName, repoName)
-        replaceStringOcccurances('./docs/.vitepress/config.js', placeholderRepoName, repoName)
+        helpers.replaceStringOcccurances('./package.json', placeholderRepoName, repoName)
+        helpers.replaceStringOcccurances('./README.md', placeholderRepoName, repoName)
+        helpers.replaceStringOcccurances('./docs/.vitepress/config.js', placeholderRepoName, repoName)
 
         
         // STEP 2:
@@ -140,15 +79,15 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         //         ./tests/ViteVueTsCompoPkgStarter.test.js
         
 
-        replaceStringOcccurances('./package.json', placeholderCompoName, pascalCompoName)
-        replaceStringOcccurances('./rollup.config.js', placeholderCompoName, pascalCompoName)
-        replaceStringOcccurances('./docs/component.md', placeholderCompoName, pascalCompoName)
-        replaceStringOcccurances('./docs/index.md', placeholderCompoName, pascalCompoName)
-        replaceStringOcccurances('./docs/.vitepress/config.js', placeholderCompoName, pascalCompoName)
-        replaceStringOcccurances('./src/index.ts', placeholderCompoName, pascalCompoName)
-        // replaceStringOcccurances('./src/ViteVueTsCompoPkgStarter.vue', placeholderCompoName, pascalCompoName)
-        replaceStringOcccurances('./src/app/Workspace.vue', placeholderCompoName, pascalCompoName)
-        // replaceStringOcccurances('./tests/ViteVueTsCompoPkgStarter.test.js', placeholderCompoName, pascalCompoName)
+        helpers.replaceStringOcccurances('./package.json', placeholderCompoName, pascalCompoName)
+        helpers.replaceStringOcccurances('./rollup.config.js', placeholderCompoName, pascalCompoName)
+        helpers.replaceStringOcccurances('./docs/component.md', placeholderCompoName, pascalCompoName)
+        helpers.replaceStringOcccurances('./docs/index.md', placeholderCompoName, pascalCompoName)
+        helpers.replaceStringOcccurances('./docs/.vitepress/config.js', placeholderCompoName, pascalCompoName)
+        helpers.replaceStringOcccurances('./src/index.ts', placeholderCompoName, pascalCompoName)
+        // helpers.replaceStringOcccurances('./src/ViteVueTsCompoPkgStarter.vue', placeholderCompoName, pascalCompoName)
+        helpers.replaceStringOcccurances('./src/app/Workspace.vue', placeholderCompoName, pascalCompoName)
+        // helpers.replaceStringOcccurances('./tests/ViteVueTsCompoPkgStarter.test.js', placeholderCompoName, pascalCompoName)
 
         
         // STEP 3:
@@ -160,7 +99,7 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         //         ./docs/index.md
         
 
-        replaceStringOcccurances('./docs/index.md', placeholderCompoNameKebob, repoName)
+        helpers.replaceStringOcccurances('./docs/index.md', placeholderCompoNameKebob, repoName)
 
         
         // STEP: 4
@@ -173,8 +112,8 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         //         ./tests/ViteVueTsCompoPkgStarter.test.js > ./tests/TestRepoName.test.js
         
        
-        renameFileAndReplaceString('./src/ViteVueTsCompoPkgStarter.vue', './' + pascalCompoName + '.vue', placeholderCompoName, pascalCompoName)
-        renameFileAndReplaceString('./tests/ViteVueTsCompoPkgStarter.test.js', './' + pascalCompoName + '.test.js', placeholderCompoName, pascalCompoName)
+        helpers.renameFileAndReplaceString('./src/ViteVueTsCompoPkgStarter.vue', './' + pascalCompoName + '.vue', placeholderCompoName, pascalCompoName)
+        helpers.renameFileAndReplaceString('./tests/ViteVueTsCompoPkgStarter.test.js', './' + pascalCompoName + '.test.js', placeholderCompoName, pascalCompoName)
         */
         
         
