@@ -1,6 +1,5 @@
 // ./scripts/init.js
 
-const fs = require('fs-extra')
 const helpers = require('./helpers.js')
 
 
