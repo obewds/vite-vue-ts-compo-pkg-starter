@@ -11,6 +11,7 @@
     import ViteVueTsCompoPkgStarter from '../ViteVueTsCompoPkgStarter.vue'
     // import test from 'vite-vue-ts-compo-pkg-starter/src/ViteVueTsCompoPkgStarter.vue'
     //import test from 'vite-vue-ts-compo-pkg-starter/dist/src/ViteVueTsCompoPkgStarter.vue'
+    //import ViteVueTsCompoPkgStarter from 'vite-vue-ts-compo-pkg-starter'
 
 </script>
 
