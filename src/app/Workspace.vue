@@ -3,6 +3,16 @@
 -->
 
 
+<script setup lang="ts">
+
+    // This starter template is using Vue 3 <script setup> SFCs
+    // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+
+    import ReplaceMe from '../ReplaceMe.vue'
+
+</script>
+
+
 <template>
 
     <div class="text-green-500 text-xs pb-1">WORKSPACE</div>
@@ -14,13 +24,3 @@
     </div>
 
 </template>
-
-
-<script setup>
-
-    // This starter template is using Vue 3 <script setup> SFCs
-    // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-
-    import ReplaceMe from '../ReplaceMe.vue'
-
-</script>

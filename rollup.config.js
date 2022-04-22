@@ -1,12 +1,14 @@
 import vue from 'rollup-plugin-vue'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
 
 const destFile = 'dist/ReplaceMe'
 
 export default [
     // ESM build to be used with webpack/rollup
     {
-        input: 'src/ReplaceMe.vue',
+        //input: 'src/ReplaceMe.vue',
+        input: 'src/index.ts',
         output: {
             format: 'esm',
             file: destFile + '.esm.js',
@@ -14,12 +16,17 @@ export default [
         external: ['vue'],
         plugins: [
             nodeResolve(),
+            typescript(/*{
+              tsconfig: false,
+              experimentalDecorators: true,
+              module: 'es2015'
+            }*/),
             vue(),
         ],
     },
     // SSR build
     {
-        input: 'src/index.js',
+        input: 'src/index.ts',
         output: {
             format: 'cjs',
             file: destFile + '.ssr.js',
@@ -27,6 +34,11 @@ export default [
         external: ['vue'],
         plugins: [
             nodeResolve(),
+            typescript(/*{
+              tsconfig: false,
+              experimentalDecorators: true,
+              module: 'es2015'
+            }*/),
             vue({ template: { optimizeSSR: true } }),
         ],
     },
@@ -43,6 +55,11 @@ export default [
         external: ['vue'],
         plugins: [
             nodeResolve(),
+            typescript(/*{
+              tsconfig: false,
+              experimentalDecorators: true,
+              module: 'es2015'
+            }*/),
             vue(),
         ],
     },
