@@ -1,4 +1,8 @@
 {
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "files": [
+    "src/index.ts",
+  ],
   "compilerOptions": {
     "target": "esnext",
     "useDefineForClassFields": true,
@@ -19,6 +23,5 @@
     "declaration": true,
     "allowJs": true,
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

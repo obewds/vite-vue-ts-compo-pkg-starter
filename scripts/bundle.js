@@ -20,7 +20,7 @@ let pkg = require('../package.json')
 
 
 // copy the already prepped entry files for the package
-fs.copySync('./src/dist/index.ts', './dist/index.ts')
+//fs.copySync('./src/dist/index.ts', './dist/index.ts')
 fs.copySync('./src/dist/index.js', './dist/index.js')
 
 
@@ -43,32 +43,22 @@ fs.copySync('./dist/' + compo + '.vue.d.ts', './dist/' + compo + '.umd.d.ts')
 fs.move('./dist/' + compo + '.vue.d.ts', './dist/src/' + compo + '.vue.d.ts')
 
 
+// remove unneded artifacts from vue-tsc prior to this script running in build processes
+fs.remove('./dist/app')
+fs.remove('./dist/dist')
+fs.remove('./dist/main.d.ts')
 
+
+/*
 // add a key/value to the repo's package file to switch it to a module type
 pkg.type = 'module'
-
-
-
 // async/await func to handle all remaining changes for the build
 const cleanUpAndCreateDistPackage = async function () {
 
     try {
 
-        // remove unneded artifacts from vue-tsc prior to this script running in build processes
-        await fs.remove('./dist/app')
-        await fs.remove('./dist/app')
-        await fs.remove('./dist/dist')
-        await fs.remove('./dist/favicon.ico')
-        await fs.remove('./dist/index.d.ts')
-        await fs.remove('./dist/main.d.ts')
-
         // create a new package.json file for the dist files so they work as modules for clients
         await fs.writeJson('./dist/package.json', pkg, { spaces:2 })
-
-        // output a message to the console when script ends run
-        console.log(' ')
-        console.log('*\\o/* ./scripts/bundle.js run complete! *\\o/*')
-        console.log(' ')
         
     } catch (err) {
 
@@ -79,3 +69,10 @@ const cleanUpAndCreateDistPackage = async function () {
 }
 // call the async/await func
 cleanUpAndCreateDistPackage()
+*/
+
+
+// output a message to the console when script ends run
+console.log(' ')
+console.log('*\\o/* ./scripts/bundle.js run complete! *\\o/*')
+console.log(' ')

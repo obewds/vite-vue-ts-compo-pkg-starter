@@ -3,6 +3,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import typescript from '@rollup/plugin-typescript'
 // import rollupVue from 'rollup-plugin-vue'
 // import { nodeResolve } from '@rollup/plugin-node-resolve'
 
@@ -41,11 +42,15 @@ export default defineConfig({
         globals: {
           vue: "Vue",
         },
+        sourcemap: true,
       },
-      // plugins: [
-      //     nodeResolve(),
-      //     rollupVue(),
-      // ],
+      plugins: [
+        typescript({
+          exclude: ["node_modules", 'tests/**/*'],
+        }),
+          //nodeResolve(),
+          //rollupVue(),
+      ],
       // input: {
       //   main: resolve(__dirname, 'index.html'),
       //   nested: resolve(__dirname, 'nested/index.html')
