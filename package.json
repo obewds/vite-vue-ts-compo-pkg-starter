@@ -44,6 +44,9 @@
     "install-github-test-pkg": "npm install https://github.com/obewds/vite-vue-ts-compo-pkg-starter",
     "uninstall-github-test-pkg": "npm uninstall vite-vue-ts-compo-pkg-starter"
   },
+  "peerDependencies": {
+    "vue": "^3.2.33"
+  },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.2.1",
     "@rollup/plugin-typescript": "^8.3.2",
