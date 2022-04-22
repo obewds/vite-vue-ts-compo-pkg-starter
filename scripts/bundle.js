@@ -50,7 +50,7 @@ pkg.type = 'module'
 
 
 // async/await func to handle all remaining changes for the build
-async function cleanUpAndCreateDistPackage () {
+const cleanUpAndCreateDistPackage = async function () {
 
     try {
 
