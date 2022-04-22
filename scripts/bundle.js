@@ -4,14 +4,18 @@ const fs = require('fs-extra')
 const helpers = require('./helpers.js')
 
 
-helpers.copyFileAndReplaceString('./src/index.ts', './dist/index.ts', 'ViteVueTsCompoPkgStarter.vue', 'src/ViteVueTsCompoPkgStarter.vue')
+const compo = 'ViteVueTsCompoPkgStarter'
 
 
-fs.copySync('./src/ViteVueTsCompoPkgStarter.vue', './dist/src/ViteVueTsCompoPkgStarter.vue')
-fs.copySync('./dist/ViteVueTsCompoPkgStarter.vue.d.ts', './dist/ViteVueTsCompoPkgStarter.cjs.d.ts')
-fs.copySync('./dist/ViteVueTsCompoPkgStarter.vue.d.ts', './dist/ViteVueTsCompoPkgStarter.es.d.ts')
-fs.copySync('./dist/ViteVueTsCompoPkgStarter.vue.d.ts', './dist/ViteVueTsCompoPkgStarter.iife.d.ts')
-fs.copySync('./dist/ViteVueTsCompoPkgStarter.vue.d.ts', './dist/ViteVueTsCompoPkgStarter.umd.d.ts')
+helpers.copyFileAndReplaceString('./src/index.ts', './dist/index.ts', compo + '.vue', 'src/' + compo + '.vue')
+helpers.copyFileAndReplaceString('./src/index.js', './dist/index.js', compo + '.vue', 'src/' + compo + '.vue')
+
+
+fs.copySync('./src/' + compo + '.vue', './dist/src/' + compo + '.vue')
+fs.copySync('./dist/' + compo + '.vue.d.ts', './dist/' + compo + '.cjs.d.ts')
+fs.copySync('./dist/' + compo + '.vue.d.ts', './dist/' + compo + '.es.d.ts')
+fs.copySync('./dist/' + compo + '.vue.d.ts', './dist/' + compo + '.iife.d.ts')
+fs.copySync('./dist/' + compo + '.vue.d.ts', './dist/' + compo + '.umd.d.ts')
 
 
 fs.remove('./dist/app')
@@ -20,7 +24,8 @@ fs.remove('./dist/index.d.ts')
 fs.remove('./dist/main.d.ts')
 
 
-fs.move('./dist/ViteVueTsCompoPkgStarter.vue.d.ts', './dist/src/ViteVueTsCompoPkgStarter.vue.d.ts')
+fs.move('./dist/' + compo + '.vue.d.ts', './dist/src/' + compo + '.vue.d.ts')
+
 
 console.log(' ')
 console.log('*\\o/* ./scripts/bundle.js run complete! *\\o/*')
