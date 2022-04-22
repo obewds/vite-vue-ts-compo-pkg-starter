@@ -29,7 +29,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ViteVueTsCompoPkgStarter',
       formats: ['es','cjs','umd','iife'],
-      fileName: (format: string) => `vite-vue-ts-compo-pkg-starter.${format}.js`,
+      fileName: (format: string) => `ViteVueTsCompoPkgStarter.${format}.js`,
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -62,8 +62,8 @@ module.exports = defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "ReplaceMe",
-      fileName: (format: string) => `replace-me.${format}.js`,
+      name: "ViteVueTsCompoPkgStarter",
+      fileName: (format: string) => `vite-vue-ts-compo-pkg-starter.${format}.js`,
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

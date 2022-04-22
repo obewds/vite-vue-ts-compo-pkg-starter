@@ -1,3 +1,1 @@
-import ReplaceMe from './ReplaceMe.vue'
-
-export { ReplaceMe }
+export { default as ViteVueTsCompoPkgStarter } from './ViteVueTsCompoPkgStarter.vue'

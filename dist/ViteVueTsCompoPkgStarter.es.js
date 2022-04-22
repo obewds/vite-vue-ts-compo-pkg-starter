@@ -1,6 +1,6 @@
 import { defineComponent, openBlock, createElementBlock, Fragment, createTextVNode, toDisplayString, renderSlot } from "vue";
-const _hoisted_1 = /* @__PURE__ */ createTextVNode("ReplaceMe");
-const _sfc_main = defineComponent({
+const _hoisted_1 = /* @__PURE__ */ createTextVNode("ViteVueTsCompoPkgStarter");
+const _sfc_main = /* @__PURE__ */ defineComponent({
   props: {
     text: { default: "" }
   },
@@ -16,4 +16,4 @@ const _sfc_main = defineComponent({
     };
   }
 });
-export { _sfc_main as ReplaceMe };
+export { _sfc_main as ViteVueTsCompoPkgStarter };

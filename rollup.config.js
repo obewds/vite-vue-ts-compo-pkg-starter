@@ -2,12 +2,12 @@ import vue from 'rollup-plugin-vue'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 
-const destFile = 'dist/ReplaceMe'
+const destFile = 'dist/ViteVueTsCompoPkgStarter'
 
 export default [
     // ESM build to be used with webpack/rollup
     {
-        //input: 'src/ReplaceMe.vue',
+        //input: 'src/ViteVueTsCompoPkgStarter.vue',
         input: 'src/index.ts',
         output: {
             format: 'esm',

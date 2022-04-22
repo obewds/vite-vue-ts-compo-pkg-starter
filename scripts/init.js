@@ -102,8 +102,8 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
 
         /*
         const placeholderRepoName = 'vite-vue-ts-compo-pkg-starter'
-        const placeholderCompoName = 'ReplaceMe'
-        const placeholderCompoNameKebob = 'replace-me'
+        const placeholderCompoName = 'ViteVueTsCompoPkgStarter'
+        const placeholderCompoNameKebob = 'vite-vue-ts-compo-pkg-starter'
         
         
         // STEP 1:
@@ -125,7 +125,7 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         
         // STEP 2:
         //     Find & replace all occurances of the string:
-        //         ReplaceMe
+        //         ViteVueTsCompoPkgStarter
         //     with the string:
         //         pascalCompoName
         //     in the following file(s):
@@ -135,9 +135,9 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         //         ./docs/index.md
         //         ./docs/.vitepress/config.js
         //         ./src/index.ts
-        //         ./src/ReplaceMe.vue
+        //         ./src/ViteVueTsCompoPkgStarter.vue
         //         ./src/app/Workspace.vue
-        //         ./tests/ReplaceMe.test.js
+        //         ./tests/ViteVueTsCompoPkgStarter.test.js
         
 
         replaceStringOcccurances('./package.json', placeholderCompoName, pascalCompoName)
@@ -146,14 +146,14 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         replaceStringOcccurances('./docs/index.md', placeholderCompoName, pascalCompoName)
         replaceStringOcccurances('./docs/.vitepress/config.js', placeholderCompoName, pascalCompoName)
         replaceStringOcccurances('./src/index.ts', placeholderCompoName, pascalCompoName)
-        // replaceStringOcccurances('./src/ReplaceMe.vue', placeholderCompoName, pascalCompoName)
+        // replaceStringOcccurances('./src/ViteVueTsCompoPkgStarter.vue', placeholderCompoName, pascalCompoName)
         replaceStringOcccurances('./src/app/Workspace.vue', placeholderCompoName, pascalCompoName)
-        // replaceStringOcccurances('./tests/ReplaceMe.test.js', placeholderCompoName, pascalCompoName)
+        // replaceStringOcccurances('./tests/ViteVueTsCompoPkgStarter.test.js', placeholderCompoName, pascalCompoName)
 
         
         // STEP 3:
         //     Find & replace all occurances of the string:
-        //         replace-me
+        //         vite-vue-ts-compo-pkg-starter
         //     with the string:
         //         repoName
         //     in the following file(s):
@@ -165,16 +165,16 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         
         // STEP: 4
         //     Change the file names containing the string:
-        //         ReplaceMe
+        //         ViteVueTsCompoPkgStarter
         //     to the string:
         //         pascalCompoName
         //     in the following file(s):
-        //         ./src/ReplaceMe.vue > ./src/TestRepoName.vue
-        //         ./tests/ReplaceMe.test.js > ./tests/TestRepoName.test.js
+        //         ./src/ViteVueTsCompoPkgStarter.vue > ./src/TestRepoName.vue
+        //         ./tests/ViteVueTsCompoPkgStarter.test.js > ./tests/TestRepoName.test.js
         
        
-        renameFileAndReplaceString('./src/ReplaceMe.vue', './' + pascalCompoName + '.vue', placeholderCompoName, pascalCompoName)
-        renameFileAndReplaceString('./tests/ReplaceMe.test.js', './' + pascalCompoName + '.test.js', placeholderCompoName, pascalCompoName)
+        renameFileAndReplaceString('./src/ViteVueTsCompoPkgStarter.vue', './' + pascalCompoName + '.vue', placeholderCompoName, pascalCompoName)
+        renameFileAndReplaceString('./tests/ViteVueTsCompoPkgStarter.test.js', './' + pascalCompoName + '.test.js', placeholderCompoName, pascalCompoName)
         */
         
         
@@ -220,7 +220,7 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
     console.error('For example, the repo @oberocks/some-project should use the following command/arg syntax:')
     console.log('$ npm run init:as -- some-project')
     console.error('  ...or...')
-    console.log('$ node init.js some-project')
+    console.log('$ node scripts/init.js some-project')
     console.log(' ')
 
     process.exit(1)

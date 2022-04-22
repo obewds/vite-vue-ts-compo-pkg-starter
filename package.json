@@ -5,19 +5,18 @@
   "author": "@oberocks",
   "homepage": "https://github.com/obewds/vite-vue-ts-compo-pkg-starter#readme",
   "license": "MIT",
-  "main": "./dist/vite-vue-ts-compo-pkg-starter.umd.js",
-  "module": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
-  "browser": "./dist/vite-vue-ts-compo-pkg-starter.iife.js",
+  "main": "./dist/ViteVueTsCompoPkgStarter.umd.js",
+  "module": "./dist/ViteVueTsCompoPkgStarter.es.js",
+  "browser": "./dist/ViteVueTsCompoPkgStarter.iife.js",
   "files": [
-    "dist",
-    "src/ReplaceMe.vue"
+    "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
-      "require": "./dist/vite-vue-ts-compo-pkg-starter.umd.js",
+      "import": "./dist/ViteVueTsCompoPkgStarter.es.js",
+      "require": "./dist/ViteVueTsCompoPkgStarter.umd.js",
       "browser": {
-        "default": "./dist/vite-vue-ts-compo-pkg-starter.iife.js"
+        "default": "./dist/ViteVueTsCompoPkgStarter.iife.js"
       }
     }
   },
@@ -32,13 +31,16 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs --port 8080",
     "pkg:rollup": "rollup -c",
-    "pkg:types": "vue-tsc --declaration --emitDeclarationOnly",
+    "pkg:declarations": "vue-tsc --declaration --emitDeclarationOnly",
+    "pkg:bundle": "npm run build && npm run pkg:declarations && node scripts/bundle.js",
     "pkg:org": "npm config set scope obewds",
     "pkg:login": "npm adduser",
     "pkg:publish": "npm publish --access public",
     "publish:prep": "npx rimraf dist && npm run pkg:rollup && npm run docs:build",
     "publish:package": "npm run publish:prep && npm run pkg:org && npm run pkg:login && npm run pkg:publish",
-    "init:as": "node init.js"
+    "init:as": "node scripts/init.js",
+    "install-github-test-pkg": "npm install https://github.com/obewds/vite-vue-ts-compo-pkg-starter",
+    "uninstall-github-test-pkg": "npm uninstall vite-vue-ts-compo-pkg-starter"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.2.1",
