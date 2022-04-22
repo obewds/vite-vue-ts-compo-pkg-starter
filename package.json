@@ -8,15 +8,6 @@
   "main": "./dist/ViteVueTsCompoPkgStarter.umd.js",
   "module": "./dist/ViteVueTsCompoPkgStarter.es.js",
   "browser": "dist/ViteVueTsCompoPkgStarter.iife.js",
-  "exports": {
-    ".": {
-      "import": "./dist/ViteVueTsCompoPkgStarter.es.js",
-      "require": "./dist/ViteVueTsCompoPkgStarter.umd.js",
-      "browser": {
-        "default": "./dist/ViteVueTsCompoPkgStarter.iife.js"
-      }
-    }
-  },
   "files": [
     "dist",
     "index.js",
