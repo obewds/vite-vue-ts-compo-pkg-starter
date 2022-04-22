@@ -5,12 +5,8 @@
   "author": "@oberocks",
   "homepage": "https://github.com/obewds/vite-vue-ts-compo-pkg-starter#readme",
   "license": "MIT",
+  "type": "module",
   "main": "./dist/ViteVueTsCompoPkgStarter.umd.js",
-  "module": "./dist/ViteVueTsCompoPkgStarter.es.js",
-  "browser": "./dist/ViteVueTsCompoPkgStarter.iife.js",
-  "files": [
-    "dist"
-  ],
   "exports": {
     ".": {
       "import": "./dist/ViteVueTsCompoPkgStarter.es.js",
@@ -20,6 +16,9 @@
       }
     }
   },
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
     "dev": "vite",
