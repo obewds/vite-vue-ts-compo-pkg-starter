@@ -10,7 +10,7 @@
 
     import ViteVueTsCompoPkgStarter from '../ViteVueTsCompoPkgStarter.vue'
     // import test from 'vite-vue-ts-compo-pkg-starter/src/ViteVueTsCompoPkgStarter.vue'
-    // import ViteVueTsCompoPkgStarter2 from 'vite-vue-ts-compo-pkg-starter'
+    //import test from 'vite-vue-ts-compo-pkg-starter/dist/src/ViteVueTsCompoPkgStarter.vue'
 
 </script>
 
@@ -23,7 +23,7 @@
 
         <ViteVueTsCompoPkgStarter/>
 
-        <!--ViteVueTsCompoPkgStarter2/-->
+        <!--test/-->
 
     </div>
 
