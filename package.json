@@ -5,13 +5,12 @@
   "author": "@oberocks",
   "homepage": "https://github.com/obewds/vite-vue-ts-compo-pkg-starter#readme",
   "license": "MIT",
-  "main": "./dist/ViteVueTsCompoPkgStarter.umd.js",
+  "main": "./dist/ViteVueTsCompoPkgStarter.cjs.js",
   "module": "./dist/ViteVueTsCompoPkgStarter.es.js",
   "browser": "dist/ViteVueTsCompoPkgStarter.iife.js",
   "files": [
     "dist",
-    "index.js",
-    "index.ts"
+    "index.js"
   ],
   "sideEffects": false,
   "scripts": {
