@@ -1,9 +1,6 @@
 // ./scripts/helpers.js
 
 const fs = require('fs-extra')
-// import fs from 'fs-extra'
-
-
 
 
 const replaceStringOcccurances = async function (filePathString, stringToReplace, replacementString) {
@@ -82,6 +79,14 @@ function pascalize (string) {
 }
 
 
+function nodeScriptSuccessMsg (string) {
+    // output a message to the console when script ends run
+    console.log(' ')
+    console.log('*\\o/* ' + string + ' *\\o/*')
+    console.log(' ')
+}
+
+
 
 
 module.exports = {
@@ -91,4 +96,5 @@ module.exports = {
     copyFileAndReplaceString: copyFileAndReplaceString,
     capitalize: capitalize,
     pascalize: pascalize,
+    nodeScriptSuccessMsg: nodeScriptSuccessMsg,
 }
