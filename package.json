@@ -14,6 +14,9 @@
       "require": "./dist/vite-vue-ts-compo-pkg-starter.umd.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "types": "./dist/types/index.d.ts",
   "sideEffects": false,
   "scripts": {
