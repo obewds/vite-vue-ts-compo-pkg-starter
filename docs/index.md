@@ -42,7 +42,7 @@ npm install @obewds/vite-vue-ts-compo-pkg-starter --save-dev
 
 ```html{3}
 <script setup>
-    import ViteVueTsCompoPkgStarter from '@obewds/vite-vue-ts-compo-pkg-starter'
+    import { ViteVueTsCompoPkgStarter } from '@obewds/vite-vue-ts-compo-pkg-starter'
 </script>
 ```
 
@@ -54,7 +54,7 @@ npm install @obewds/vite-vue-ts-compo-pkg-starter --save-dev
 ```html{4,9}
 <script>
     import { defineComponent } from 'vue'
-    import ViteVueTsCompoPkgStarter from '@obewds/vite-vue-ts-compo-pkg-starter'
+    import { ViteVueTsCompoPkgStarter } from '@obewds/vite-vue-ts-compo-pkg-starter'
 
     export default defineComponent({
         components: { ViteVueTsCompoPkgStarter }
