@@ -1,1 +1,3 @@
-export { default as ViteVueTsCompoPkgStarter } from './components/ViteVueTsCompoPkgStarter.vue'
+import ViteVueTsCompoPkgStarter from './components/ViteVueTsCompoPkgStarter.vue'
+
+export default ViteVueTsCompoPkgStarter
