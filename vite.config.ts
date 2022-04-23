@@ -30,19 +30,16 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ViteVueTsCompoPkgStarter',
       formats: ['es','cjs','umd','iife'],
-      fileName: (format: string) => `ViteVueTsCompoPkgStarter.${format}.js`,
+      fileName: (format: string) => `vite-vue-ts-compo-pkg-starter.${format}.js`,
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
       external: ['vue'],
       output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
+        // Provide global variables to use in the UMD build for externalized deps
         globals: {
           vue: 'Vue',
         },
-        sourcemap: true,
+        //sourcemap: true,
       },
       plugins: [
         typescript({
@@ -59,30 +56,3 @@ export default defineConfig({
     },
   },
 })
-
-/*
-const path = require("path");
-const { defineConfig } = require("vite");
-
-module.exports = defineConfig({
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
-      name: "ViteVueTsCompoPkgStarter",
-      fileName: (format: string) => `vite-vue-ts-compo-pkg-starter.${format}.js`,
-    },
-    rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      external: ["vue"],
-      output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: "Vue",
-        },
-      },
-    },
-  },
-});
-*/

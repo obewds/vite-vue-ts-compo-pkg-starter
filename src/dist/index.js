@@ -1,3 +1,3 @@
-import ViteVueTsCompoPkgStarter from './ViteVueTsCompoPkgStarter.vue'
+import ViteVueTsCompoPkgStarter from './ViteVueTsCompoPkgStarter'
 
 export { ViteVueTsCompoPkgStarter }

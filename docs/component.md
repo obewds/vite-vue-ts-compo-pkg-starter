@@ -26,7 +26,7 @@ Pure Vue.js version
 
 ESM version
 
-<<< @/../dist/ViteVueTsCompoPkgStarter.es.js
+<<< @/../dist/vite-vue-ts-compo-pkg-starter.es.js
 
 
 
@@ -35,7 +35,7 @@ ESM version
 
 Version used by Node.js (Universal version for Common.js/AMD)
 
-<<< @/../dist/ViteVueTsCompoPkgStarter.umd.js
+<<< @/../dist/vite-vue-ts-compo-pkg-starter.umd.js
 
 
 
@@ -44,7 +44,7 @@ Version used by Node.js (Universal version for Common.js/AMD)
 
 CommonJS version
 
-<<< @/../dist/ViteVueTsCompoPkgStarter.cjs.js
+<<< @/../dist/vite-vue-ts-compo-pkg-starter.cjs.js
 
 
 
@@ -53,5 +53,5 @@ CommonJS version
 
 Version used for browser instances
 
-<<< @/../dist/ViteVueTsCompoPkgStarter.iife.js
+<<< @/../dist/vite-vue-ts-compo-pkg-starter.iife.js
 

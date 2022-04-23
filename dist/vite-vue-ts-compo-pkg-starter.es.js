@@ -17,4 +17,3 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
   }
 });
 export { _sfc_main as ViteVueTsCompoPkgStarter };
-//# sourceMappingURL=ViteVueTsCompoPkgStarter.es.js.map

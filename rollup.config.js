@@ -2,7 +2,7 @@ import vue from 'rollup-plugin-vue'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 
-const destFile = 'dist/ViteVueTsCompoPkgStarter'
+const destFile = 'dist/vite-vue-ts-compo-pkg-starter'
 
 export default [
     // ESM build to be used with webpack/rollup
