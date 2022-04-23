@@ -12,8 +12,7 @@
     ".": {
       "import": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
       "require": "./dist/vite-vue-ts-compo-pkg-starter.umd.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+    }
   },
   "types": "./dist/types/index.d.ts",
   "sideEffects": false,
