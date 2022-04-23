@@ -17,7 +17,7 @@ head:
 
 Pure Vue.js version
 
-<<< @/../src/ViteVueTsCompoPkgStarter.vue
+<<< @/../src/components/ViteVueTsCompoPkgStarter.vue
 
 
 
