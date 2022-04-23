@@ -12,10 +12,12 @@
     ".": {
       "import": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
       "require": "./dist/vite-vue-ts-compo-pkg-starter.umd.js"
-    }
+    },
+    "./src": "./src/components/ViteVueTsCompoPkgStarter.vue"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/components"
   ],
   "types": "./dist/types/index.d.ts",
   "sideEffects": false,
