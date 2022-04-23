@@ -12,10 +12,11 @@ head:
 
 
 
-## Current Testing Status
+## Testing Status
 
-::: tip CURRENT COVERAGE
-**100%**
+::: tip CURRENT STATUS
+**100%** Coverage  
+**100%** Passing
 :::
 
 
