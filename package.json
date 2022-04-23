@@ -5,15 +5,21 @@
   "author": "@oberocks",
   "homepage": "https://github.com/obewds/vite-vue-ts-compo-pkg-starter#readme",
   "license": "MIT",
-  "main": "./dist/ViteVueTsCompoPkgStarter.cjs.js",
-  "module": "./dist/ViteVueTsCompoPkgStarter.es.js",
-  "browser": "dist/ViteVueTsCompoPkgStarter.iife.js",
-  "files": [
-    "dist",
-    "index.js"
-  ],
+  "main": "./dist/vite-vue-ts-compo-pkg-starter.umd.js",
+  "module": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
+  "browser": "dist/vite-vue-ts-compo-pkg-starter.iife.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
+      "require": "./dist/vite-vue-ts-compo-pkg-starter.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "types": "./dist/types/index.d.ts",
   "sideEffects": false,
   "scripts": {
+    "tsbuild": "npx rimraf dist && vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "pkg:tsbundle": "npm run tsbuild && npm run docs:build",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
