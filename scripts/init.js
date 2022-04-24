@@ -24,21 +24,6 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
 
         const pascalCompoName = helpers.pascalize(repoName)
 
-        // 'test-completed'
-        // testing code
-        
-        // rename filenames
-        /*
-        helpers.renameFileAndReplaceString('./ZedTest.vue', './' + pascalCompoName + '.vue', 'this-is-a-test', repoName)
-
-        // replace all placeholder strings in files with kebob case repo name
-        helpers.replaceStringOcccurances('./z-test.js', 'this-is-a-test', repoName)
-        helpers.replaceStringOcccurances('./z-test.md', 'this-is-a-test', repoName)
-        */
-
-
-        // actual prod code (careful when uncommenting!)
-
         const placeholderRepoName = 'vite-vue-ts-compo-pkg-starter'
         const placeholderCompoName = 'ViteVueTsCompoPkgStarter'
         
