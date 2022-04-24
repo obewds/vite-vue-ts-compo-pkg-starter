@@ -89,8 +89,8 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         //         ./tests/ViteVueTsCompoPkgStarter.test.js > ./tests/TestRepoName.test.js
         
        
-        helpers.renameFileAndReplaceString('./src/components/ViteVueTsCompoPkgStarter.vue', './' + pascalCompoName + '.vue', placeholderCompoName, pascalCompoName)
-        helpers.renameFileAndReplaceString('./tests/ViteVueTsCompoPkgStarter.test.js', './' + pascalCompoName + '.test.js', placeholderCompoName, pascalCompoName)
+        helpers.renameFileAndReplaceString('./src/components/ViteVueTsCompoPkgStarter.vue', './src/components/' + pascalCompoName + '.vue', placeholderCompoName, pascalCompoName)
+        helpers.renameFileAndReplaceString('./tests/ViteVueTsCompoPkgStarter.test.js', './tests/' + pascalCompoName + '.test.js', placeholderCompoName, pascalCompoName)
         
         
         /*
