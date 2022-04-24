@@ -7,6 +7,34 @@ The official OBE:WDS Vite/Vue TypeScript component package development kit with 
 ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) &nbsp; ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) &nbsp; ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) &nbsp; ![Dependabot](https://img.shields.io/badge/dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white)
 
 ---
+## Documentation
+
+Check out the [official docs](https://obewds.github.io/vite-vue-ts-compo-pkg-starter/) for this component for more details!
+
+<br>
+
+
+---
+## Installation
+
+```bash
+npm install @obewds/vue-tw-el --save-dev
+```
+
+<br>
+
+
+---
+## Uninstall
+
+```bash
+npm uninstall @obewds/vue-tw-el
+```
+
+<br>
+
+
+---
 
 # Vue 3 + TypeScript + Vite
 
