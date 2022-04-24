@@ -44,13 +44,13 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
 
 
         // replace all placeholder strings in files with kebob case repo name
-        helpers.replaceStringOcccurances('./package.json', placeholderRepoName, repoName)
-        helpers.replaceStringOcccurances('./README.md', placeholderRepoName, repoName)
-        helpers.replaceStringOcccurances('./vite.config.ts', placeholderRepoName, repoName)
-        helpers.replaceStringOcccurances('./docs/.vitepress/config.js', placeholderRepoName, repoName)
-        helpers.replaceStringOcccurances('./docs/component.md', placeholderRepoName, repoName)
-        helpers.replaceStringOcccurances('./docs/index.md', placeholderRepoName, repoName)
-        helpers.replaceStringOcccurances('./src/app/Workspace.vue', placeholderRepoName, repoName)
+        await helpers.replaceStringOcccurances('./package.json', placeholderRepoName, repoName)
+        await helpers.replaceStringOcccurances('./README.md', placeholderRepoName, repoName)
+        await helpers.replaceStringOcccurances('./vite.config.ts', placeholderRepoName, repoName)
+        await helpers.replaceStringOcccurances('./docs/.vitepress/config.js', placeholderRepoName, repoName)
+        await helpers.replaceStringOcccurances('./docs/component.md', placeholderRepoName, repoName)
+        await helpers.replaceStringOcccurances('./docs/index.md', placeholderRepoName, repoName)
+        await helpers.replaceStringOcccurances('./src/app/Workspace.vue', placeholderRepoName, repoName)
 
         
         // STEP 2:
@@ -69,14 +69,14 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         //         ./src/app/Workspace.vue
         
 
-        helpers.replaceStringOcccurances('./package.json', placeholderCompoName, pascalCompoName)
-        helpers.replaceStringOcccurances('./vite.config.ts', placeholderCompoName, pascalCompoName)
-        helpers.replaceStringOcccurances('./docs/component.md', placeholderCompoName, pascalCompoName)
-        helpers.replaceStringOcccurances('./docs/index.md', placeholderCompoName, pascalCompoName)
-        helpers.replaceStringOcccurances('./docs/tests.md', placeholderCompoName, pascalCompoName)
-        helpers.replaceStringOcccurances('./docs/.vitepress/config.js', placeholderCompoName, pascalCompoName)
-        helpers.replaceStringOcccurances('./src/index.ts', placeholderCompoName, pascalCompoName)
-        helpers.replaceStringOcccurances('./src/app/Workspace.vue', placeholderCompoName, pascalCompoName)
+        await helpers.replaceStringOcccurances('./package.json', placeholderCompoName, pascalCompoName)
+        await helpers.replaceStringOcccurances('./vite.config.ts', placeholderCompoName, pascalCompoName)
+        await helpers.replaceStringOcccurances('./docs/component.md', placeholderCompoName, pascalCompoName)
+        await helpers.replaceStringOcccurances('./docs/index.md', placeholderCompoName, pascalCompoName)
+        await helpers.replaceStringOcccurances('./docs/tests.md', placeholderCompoName, pascalCompoName)
+        await helpers.replaceStringOcccurances('./docs/.vitepress/config.js', placeholderCompoName, pascalCompoName)
+        await helpers.replaceStringOcccurances('./src/index.ts', placeholderCompoName, pascalCompoName)
+        await helpers.replaceStringOcccurances('./src/app/Workspace.vue', placeholderCompoName, pascalCompoName)
 
         
         // STEP: 3
@@ -89,8 +89,8 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         //         ./tests/ViteVueTsCompoPkgStarter.test.js > ./tests/TestRepoName.test.js
         
        
-        helpers.renameFileAndReplaceString('./src/components/ViteVueTsCompoPkgStarter.vue', './src/components/' + pascalCompoName + '.vue', placeholderCompoName, pascalCompoName)
-        helpers.renameFileAndReplaceString('./tests/ViteVueTsCompoPkgStarter.test.js', './tests/' + pascalCompoName + '.test.js', placeholderCompoName, pascalCompoName)
+        await helpers.renameFileAndReplaceString('./src/components/ViteVueTsCompoPkgStarter.vue', './src/components/' + pascalCompoName + '.vue', placeholderCompoName, pascalCompoName)
+        await helpers.renameFileAndReplaceString('./tests/ViteVueTsCompoPkgStarter.test.js', './tests/' + pascalCompoName + '.test.js', placeholderCompoName, pascalCompoName)
         
         
         /*
