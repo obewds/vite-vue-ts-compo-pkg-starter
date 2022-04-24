@@ -51,7 +51,7 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         //     in the following file(s):
         //         ./package.json
         //         ./README.md
-        //         ./vite.config.js
+        //         ./vite.config.ts
         //         ./docs/.vitepress/config.js
         //         ./docs/component.md
         //         ./docs/index.md
@@ -61,7 +61,7 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         // replace all placeholder strings in files with kebob case repo name
         helpers.replaceStringOcccurances('./package.json', placeholderRepoName, repoName)
         helpers.replaceStringOcccurances('./README.md', placeholderRepoName, repoName)
-        helpers.replaceStringOcccurances('./vite.config.js', placeholderRepoName, repoName)
+        helpers.replaceStringOcccurances('./vite.config.ts', placeholderRepoName, repoName)
         helpers.replaceStringOcccurances('./docs/.vitepress/config.js', placeholderRepoName, repoName)
         helpers.replaceStringOcccurances('./docs/component.md', placeholderRepoName, repoName)
         helpers.replaceStringOcccurances('./docs/index.md', placeholderRepoName, repoName)
@@ -104,7 +104,7 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
         //         ./tests/ViteVueTsCompoPkgStarter.test.js > ./tests/TestRepoName.test.js
         
        
-        helpers.renameFileAndReplaceString('./src/ViteVueTsCompoPkgStarter.vue', './' + pascalCompoName + '.vue', placeholderCompoName, pascalCompoName)
+        helpers.renameFileAndReplaceString('./src/components/ViteVueTsCompoPkgStarter.vue', './' + pascalCompoName + '.vue', placeholderCompoName, pascalCompoName)
         helpers.renameFileAndReplaceString('./tests/ViteVueTsCompoPkgStarter.test.js', './' + pascalCompoName + '.test.js', placeholderCompoName, pascalCompoName)
         
         
@@ -129,7 +129,7 @@ if (scriptArguments[0] && (scriptArguments[0]).length > 0) {
                     Ensure the package was published: https://www.npmjs.com/package/@obewds/test-repo-name
         */
 
-                    
+
         helpers.nodeScriptSuccessMsg('The package files to start developing your new ' + pascalCompoName + '.vue component were successfully updated for the ' + repoName + ' repo!')
 
     }
