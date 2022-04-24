@@ -45,6 +45,8 @@ npm run dev
 
 You can use the interface that's launched to get your command to initialize all of the repository files for your component, or do something like this:
 
+> NOTE: It's usually a good idea to spin down any local servers before running the `init:as` command!
+
 ```bash
 npm run init:as -- your-repo-name
 ```
