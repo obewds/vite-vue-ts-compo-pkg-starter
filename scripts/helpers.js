@@ -3,7 +3,7 @@
 const fs = require('fs-extra')
 
 
-const replaceStringOcccurances = async function (filePathString, stringToReplace, replacementString) {
+const replaceStringOcccurances = async function (filePathString, stringsToReplace, replacementStrings) {
     
     fs.readFile(filePathString, 'utf8', function (err,data) {
 
@@ -12,9 +12,16 @@ const replaceStringOcccurances = async function (filePathString, stringToReplace
             return false
         }
 
-        const regex = new RegExp(`\\b${stringToReplace}\\b`, 'g') // using boundries and case sensitive matching
+        let result = data
 
-        const result = data.replace(regex, replacementString);
+        for (let i=0; i < stringsToReplace.length; i++) {
+
+            //const regex = new RegExp(`\\b${stringsToReplace[i]}\\b`, 'g') // using boundries and case sensitive matching
+            const regex = new RegExp(stringsToReplace[i], 'g')
+
+            result = result.replace(regex, replacementStrings[i]);
+
+        }
 
         fs.writeFile(filePathString, result, 'utf8', function (err) {
             if (err) {
@@ -30,40 +37,22 @@ const replaceStringOcccurances = async function (filePathString, stringToReplace
 }
 
 
-const renameFile = async function (filePathString, renamedFilePathString) {
+const renameFileAndReplaceString = async function (filePathString, renamedFilePathString, stringsToReplace, replacementStrings) {
 
-    fs.rename(filePathString, renamedFilePathString, function(err) {
+    fs.rename(filePathString, renamedFilePathString, async function(err) {
 
         if ( err ) {
             console.log('ERROR: ' + err)
             return false
         }
 
+        const replacement = await replaceStringOcccurances(renamedFilePathString, stringsToReplace, replacementStrings)
+
         console.log(filePathString + ' was successfully changed to ' + renamedFilePathString + '!')
-        return true
+        return replacement
 
     })
 
-}
-
-
-const renameFileAndReplaceString = async function (filePathString, renamedFilePathString, stringToReplace, replacementString) {
-    try {
-        await renameFile(filePathString, renamedFilePathString)
-        replaceStringOcccurances(renamedFilePathString, stringToReplace, replacementString)
-    } catch (err) {
-        console.error(err)
-    }
-}
-
-
-const copyFileAndReplaceString = async function (filePathString, newFilePathString, stringToReplace, replacementString) {
-    try {
-        fs.copySync(filePathString, newFilePathString)
-        replaceStringOcccurances(newFilePathString, stringToReplace, replacementString)
-    } catch (err) {
-        console.error(err)
-    }
 }
 
 
@@ -91,9 +80,7 @@ function nodeScriptSuccessMsg (string) {
 
 module.exports = {
     replaceStringOcccurances: replaceStringOcccurances,
-    renameFile: renameFile,
     renameFileAndReplaceString: renameFileAndReplaceString,
-    copyFileAndReplaceString: copyFileAndReplaceString,
     capitalize: capitalize,
     pascalize: pascalize,
     nodeScriptSuccessMsg: nodeScriptSuccessMsg,
