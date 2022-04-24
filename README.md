@@ -37,39 +37,33 @@ Once the repo is local, you can install dependencies with:
 npm install
 ```
 
-Then you can launch Vite and the Workspace app with:
-
-```bash
-npm run dev
-```
-
-You can use the interface that's launched to get your command to initialize all of the repository files for your component, or do something like this:
-
-> NOTE: It's usually a good idea to spin down any local servers before running the `init:as` command!
+To initialize your repository's files specific to your new repo/component name, run:
 
 ```bash
 npm run init:as -- your-repo-name
 ```
 
-From there you can run your component docs locally with:
+And to generate all of the files after changing the names to your repo/component name, use:
 
+```bash
+npm run publish:prep
+```
+
+Then you can launch Vite and the Workspace app and a seperate local vite server for your docs with:
+
+```bash
+npm run dev
+```
 ```bash
 npm run docs:dev
 ```
 
-And generate all your component files with:
-
-```bash
-npm run docs:dev
-```
 
 And of course you can run tests with:
 
 ```bash
 npm run test
 ```
-
-And you can run test coverage with:
 
 ```bash
 npm run coverage
