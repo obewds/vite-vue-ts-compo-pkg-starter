@@ -12,7 +12,7 @@ module.exports = {
             { text: "Home", link: "/" },
             { text: "Component", link: "/component" },
             { text: "Tests", link: "/tests" },
-            // { text: "npm", link: "https://www.npmjs.com/package/@obewds/vite-vue-ts-compo-pkg-starter" },
+            { text: "npm", link: "https://www.npmjs.com/package/@obewds/vite-vue-ts-compo-pkg-starter" },
             { text: "GitHub", link: "https://github.com/obewds/vite-vue-ts-compo-pkg-starter" },
         ],
         // sidebar: [
