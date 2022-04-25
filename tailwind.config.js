@@ -7,6 +7,7 @@ module.exports = {
         "./index.html",
         "./src/**/*.{vue,js,ts,jsx,tsx}",
         "./node_modules/@obewds/**/dist/*.js",
+        "./obewds.tw.config.json",
     ],
 
     theme: {
