@@ -1,5 +1,5 @@
 {
-  "name": "vite-vue-ts-compo-pkg-starter",
+  "name": "@obewds/vite-vue-ts-compo-pkg-starter",
   "description": "The official OBE:WDS Vite/Vue TypeScript component package development kit with Tailwind CSS, VitePress and Vitest integrations",
   "version": "0.1.0",
   "author": "@oberocks",
