@@ -34,7 +34,7 @@ npm install @obewds/vite-vue-ts-compo-pkg-starter --save-dev
 
 ### Template syntax
 
-```html{3}
+```html{2}
 <template>
     <ViteVueTsCompoPkgStarter/>
 </template>
@@ -45,7 +45,7 @@ npm install @obewds/vite-vue-ts-compo-pkg-starter --save-dev
 
 ### Script setup syntax
 
-```html{3}
+```html{2}
 <script setup lang="ts">
     import { ViteVueTsCompoPkgStarter } from '@obewds/vite-vue-ts-compo-pkg-starter'
 </script>
@@ -56,7 +56,7 @@ npm install @obewds/vite-vue-ts-compo-pkg-starter --save-dev
 
 ### Composition API syntax
 
-```html{4,9}
+```html{3,6}
 <script lang="ts">
     import { defineComponent } from 'vue'
     import { ViteVueTsCompoPkgStarter } from '@obewds/vite-vue-ts-compo-pkg-starter'
