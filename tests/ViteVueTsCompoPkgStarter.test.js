@@ -1,7 +1,7 @@
 // ./tests/ViteVueTsCompoPkgStarter.test.js
 
 import { mount } from '@vue/test-utils'
-import ViteVueTsCompoPkgStarter from '../src/ViteVueTsCompoPkgStarter.vue'
+import ViteVueTsCompoPkgStarter from '../src/components/ViteVueTsCompoPkgStarter.vue'
 
 
 
