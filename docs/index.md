@@ -46,7 +46,7 @@ npm install @obewds/vite-vue-ts-compo-pkg-starter --save-dev
 ### Script setup syntax
 
 ```html{3}
-<script setup>
+<script setup lang="ts">
     import { ViteVueTsCompoPkgStarter } from '@obewds/vite-vue-ts-compo-pkg-starter'
 </script>
 ```
@@ -57,7 +57,7 @@ npm install @obewds/vite-vue-ts-compo-pkg-starter --save-dev
 ### Composition API syntax
 
 ```html{4,9}
-<script>
+<script lang="ts">
     import { defineComponent } from 'vue'
     import { ViteVueTsCompoPkgStarter } from '@obewds/vite-vue-ts-compo-pkg-starter'
 
