@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "./dist/vite-vue-ts-compo-pkg-starter.umd.js",
   "module": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
-  "browser": "dist/vite-vue-ts-compo-pkg-starter.iife.js",
+  "browser": "./dist/vite-vue-ts-compo-pkg-starter.iife.js",
   "exports": {
     ".": {
       "import": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
