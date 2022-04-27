@@ -13,7 +13,7 @@ This is an example GitHub Pages site and is NOT intended for actual use in real 
 
 
 
-# ViteVueTsCompoPkgStarter.vue Component
+# @obewds/ViteVueTsCompoPkgStarter.vue Component
 
 
 
