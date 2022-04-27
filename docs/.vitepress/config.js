@@ -2,7 +2,7 @@
 
 module.exports = {
     base: '/vite-vue-ts-compo-pkg-starter/',
-    title: 'ViteVueTsCompoPkgStarter.vue',
+    title: '@obewds/ViteVueTsCompoPkgStarter.vue',
     description: 'A documentation site for the ViteVueTsCompoPkgStarter component',
     markdown: {
       lineNumbers: true,
