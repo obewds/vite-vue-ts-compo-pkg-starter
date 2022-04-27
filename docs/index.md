@@ -11,7 +11,7 @@ This is an example GitHub Pages site and is NOT intended for actual use in real 
 :::
 
 
-# ViteVueTsCompoPkgStarter.vue
+# @obewds/ViteVueTsCompoPkgStarter.vue
 
 Welcome to the docs page for OBE:WDS's `ViteVueTsCompoPkgStarter.vue` component for [Vue.js](https://vuejs.org/)!
 
