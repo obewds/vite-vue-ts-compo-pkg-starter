@@ -13,7 +13,7 @@ This is an example GitHub Pages site and is NOT intended for actual use in real 
 
 
 
-# @obewds/ViteVueTsCompoPkgStarter.vue Tests
+# @obewds/vite-vue-ts-compo-pkg-starter Tests
 
 
 
