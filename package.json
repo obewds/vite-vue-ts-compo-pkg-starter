@@ -56,7 +56,7 @@
     "c8": "^7.11.0",
     "fs-extra": "^10.1.0",
     "happy-dom": "^3.1.0",
-    "postcss": "^8.4.12",
+    "postcss": "^8.4.13",
     "rimraf": "^3.0.2",
     "tailwindcss": "^3.0.24",
     "typescript": "^4.6.4",
