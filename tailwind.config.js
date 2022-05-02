@@ -10,9 +10,9 @@ module.exports = {
         "./obewds.tw.config.json",
     ],
 
-    theme: {
-        extend: {},
-    },
+    // theme: {
+    //     extend: {},
+    // },
 
     plugins: [
         require('@tailwindcss/forms'),
