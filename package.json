@@ -38,7 +38,8 @@
     "pkg:publish": "npm publish --access public",
     "publish:prep": "npx rimraf dist && npm run pkg:tsbundle",
     "publish:package": "npm run publish:prep && npm run pkg:org && npm run pkg:login && npm run pkg:publish",
-    "init:as": "node scripts/init.js"
+    "init:as": "node scripts/init.js",
+    "delete:init:as": "npx rimraf scripts/init.js"
   },
   "peerDependencies": {
     "vue": "^3.2.33"
