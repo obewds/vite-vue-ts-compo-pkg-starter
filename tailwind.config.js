@@ -6,8 +6,13 @@ module.exports = {
     content: [
         "./index.html",
         "./src/**/*.{vue,js,ts,jsx,tsx}",
-        "./node_modules/@obewds/**/dist/*.js",
-        "./obewds.tw.config.json",
+        // PROVIDES TAILWIND OBE:WDS DEFAULT DESIGN SYSTEM CLASSES
+        "./node_modules/@obewds/obewds-tw-config/dist/*.js",
+    ],
+
+    safelist: [
+        // Include to ensure TW can parse all app config default classes
+        JSON.stringify(require('./obewds.tw.config.json'), null, 0),
     ],
 
     // theme: {
