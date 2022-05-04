@@ -3,7 +3,7 @@
   "description": "The official OBE:WDS Vite/Vue TypeScript component package development kit with Tailwind CSS, VitePress and Vitest integrations",
   "version": "0.1.0",
   "author": "@oberocks",
-  "homepage": "https://github.com/obewds/vite-vue-ts-compo-pkg-starter#readme",
+  "homepage": "https://obewds.github.io/vite-vue-ts-compo-pkg-starter/",
   "license": "MIT",
   "main": "./dist/vite-vue-ts-compo-pkg-starter.umd.js",
   "module": "./dist/vite-vue-ts-compo-pkg-starter.es.js",
