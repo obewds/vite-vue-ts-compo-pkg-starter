@@ -97,7 +97,7 @@ Check out the [official docs](https://obewds.github.io/vite-vue-ts-compo-pkg-sta
 ## Installation
 
 ```bash
-npm install @obewds/vue-tw-el --save-dev
+npm install @obewds/vite-vue-ts-compo-pkg-starter --save-dev
 ```
 
 <br>
@@ -107,5 +107,5 @@ npm install @obewds/vue-tw-el --save-dev
 ## Uninstall
 
 ```bash
-npm uninstall @obewds/vue-tw-el
+npm uninstall @obewds/vite-vue-ts-compo-pkg-starter
 ```
