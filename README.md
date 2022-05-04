@@ -1,6 +1,6 @@
 # vite-vue-ts-compo-pkg-starter
 
-The official OBE:WDS Vite/Vue TypeScript component package development kit with Tailwind CSS, VitePress and Vitest integrations
+The @obewds/vite-vue-ts-compo-pkg-starter modular design system component for Vue.js
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/obewds/vite-vue-ts-compo-pkg-starter?label=Github&logo=github&style=for-the-badge) &nbsp; ![npm](https://img.shields.io/npm/v/@obewds/vite-vue-ts-compo-pkg-starter?color=%23cc3534&logo=npm&style=for-the-badge)
 
@@ -79,6 +79,8 @@ npm run delete:init:as
 Don't forget to **remove** the npm scripts `"init:as"` and `"delete:init:as"` from your `package.json` file after running the `delete:init:as` command!
 
 > And after you've removed the npm scripts, it's safe to do a quick search of the repo files for the string `InitContent` and delete the file, and component import, and the component instance. And that will finish up clearing out all of the no longer needed content and files following the `init:as` process!
+
+> Lastly, delete this section and the Vite/Vue section above to prep this file for publishing to npm!
 
 
 <br>
