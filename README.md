@@ -1,6 +1,6 @@
 # vite-vue-ts-compo-pkg-starter
 
-The official OBE:WDS Vite/Vue TypeScript component package development kit with Tailwind CSS, VitePress and Vitest integrations
+The @obewds/vite-vue-ts-compo-pkg-starter modular design system component for Vue.js
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/obewds/vite-vue-ts-compo-pkg-starter?label=Github&logo=github&style=for-the-badge) &nbsp; ![npm](https://img.shields.io/npm/v/@obewds/vite-vue-ts-compo-pkg-starter?color=%23cc3534&logo=npm&style=for-the-badge)
 
