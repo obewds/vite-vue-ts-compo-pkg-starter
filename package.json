@@ -38,7 +38,7 @@
     "pkg:publish": "npm publish --access public",
     "changelog": "auto-changelog --package --unreleased --backfill-limit 20",
     "git:tag" : "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
-    "publish:prep": "npx rimraf dist && npm run pkg:tsbundle && npm run changelog",
+    "publish:prep": "npx rimraf dist && npm run pkg:tsbundle",
     "publish:package": "npm run publish:prep && npm run pkg:org && npm run pkg:login && npm run pkg:publish && npm run git:tag && npm run changelog",
     "init:as": "node scripts/init.js",
     "delete:init:as": "npx rimraf scripts/init.js"
