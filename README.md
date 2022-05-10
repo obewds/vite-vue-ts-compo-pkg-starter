@@ -90,6 +90,8 @@ Don't forget to **remove** the npm scripts `"init:as"` and `"delete:init:as"` fr
 
 Check out the [official docs](https://obewds.github.io/vite-vue-ts-compo-pkg-starter/) for this component for more details!
 
+Or check out the [CHANGELOG](https://github.com/obewds/vite-vue-ts-compo-pkg-starter/blob/main/CHANGELOG.md) for the code base!
+
 <br>
 
 
