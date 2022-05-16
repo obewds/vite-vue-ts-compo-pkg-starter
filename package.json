@@ -47,7 +47,7 @@
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@obewds/obewds-tw-config": "^0.6.0",
+    "@obewds/obewds-tw-config": "^0.6.2",
     "@obewds/vue-component-helpers": "^0.7.0",
     "@rollup/plugin-typescript": "^8.3.2",
     "@tailwindcss/aspect-ratio": "^0.4.0",
