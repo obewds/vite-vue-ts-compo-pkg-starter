@@ -72,7 +72,7 @@
     "vitepress": "^0.22.4",
     "vitest": "^0.12.3",
     "vue": "^3.2.33",
-    "vue-tsc": "^0.34.12"
+    "vue-tsc": "^0.34.15"
   },
   "repository": {
     "type": "git",
