@@ -44,7 +44,7 @@
     "delete:init:as": "npx rimraf scripts/init.js"
   },
   "peerDependencies": {
-    "vue": "^3.2.33"
+    "vue": "^3.2.36"
   },
   "devDependencies": {
     "@obewds/obewds-tw-config": "^0.6.2",
@@ -71,7 +71,7 @@
     "vite": "^2.9.9",
     "vitepress": "^0.22.4",
     "vitest": "^0.12.6",
-    "vue": "^3.2.33",
+    "vue": "^3.2.36",
     "vue-tsc": "^0.34.15"
   },
   "repository": {
