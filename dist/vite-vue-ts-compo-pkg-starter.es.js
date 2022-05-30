@@ -1,6 +1,7 @@
 import { defineComponent, openBlock, createElementBlock, Fragment, createTextVNode, toDisplayString, renderSlot } from "vue";
 const _hoisted_1 = /* @__PURE__ */ createTextVNode("ViteVueTsCompoPkgStarter");
 const _sfc_main = /* @__PURE__ */ defineComponent({
+  name: "ViteVueTsCompoPkgStarter",
   props: {
     text: { default: "" }
   },
