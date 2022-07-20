@@ -49,7 +49,7 @@ And to generate all of the files after changing the names to your repo/component
 npm run publish:prep
 ```
 
-Then you can launch Vite and the Workspace app and a seperate local vite server for your docs with:
+Then you can launch Vite and the Workspace app and a separate local vite server for your docs with:
 
 ```bash
 npm run dev
