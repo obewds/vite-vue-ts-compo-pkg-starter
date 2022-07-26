@@ -1,20 +1,19 @@
-import { defineComponent, openBlock, createElementBlock, Fragment, createTextVNode, toDisplayString, renderSlot } from "vue";
-const _hoisted_1 = /* @__PURE__ */ createTextVNode("ViteVueTsCompoPkgStarter");
-const _sfc_main = /* @__PURE__ */ defineComponent({
-  name: "ViteVueTsCompoPkgStarter",
+import { defineComponent as a, openBlock as t, createElementBlock as o, Fragment as s, createTextVNode as r, toDisplayString as i, renderSlot as l } from "vue";
+const m = /* @__PURE__ */ r("ViteVueTsCompoPkgStarter"), u = /* @__PURE__ */ a({
+  __name: "ViteVueTsCompoPkgStarter",
   props: {
     text: { default: "" }
   },
-  setup(__props) {
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", null, [
-        __props.text ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [
-          createTextVNode(toDisplayString(__props.text), 1)
-        ], 64)) : renderSlot(_ctx.$slots, "default", { key: 1 }, () => [
-          _hoisted_1
-        ])
-      ]);
-    };
+  setup(e) {
+    return (n, c) => (t(), o("div", null, [
+      e.text ? (t(), o(s, { key: 0 }, [
+        r(i(e.text), 1)
+      ], 64)) : l(n.$slots, "default", { key: 1 }, () => [
+        m
+      ])
+    ]));
   }
 });
-export { _sfc_main as ViteVueTsCompoPkgStarter };
+export {
+  u as ViteVueTsCompoPkgStarter
+};
