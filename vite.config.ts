@@ -3,7 +3,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-import typescript from '@rollup/plugin-typescript'
 
 
 // https://vitejs.dev/config/
@@ -40,12 +39,6 @@ export default defineConfig({
         },
         //sourcemap: true,
       },
-      plugins: [
-        typescript({
-          include: ['index.js'],
-          exclude: ['node_modules', 'tests/**/*'],
-        }),
-      ],
     },
   },
 })
