@@ -50,7 +50,7 @@
     "@obewds/obewds-tw-config": "^1.1.0",
     "@obewds/vue-component-helpers": "^1.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.5.2",
+    "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.4",
     "@types/lodash.merge": "^4.6.7",
