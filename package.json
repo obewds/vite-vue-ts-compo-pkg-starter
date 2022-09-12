@@ -56,7 +56,7 @@
     "@vitest/coverage-c8": "^0.23.1",
     "@vue/test-utils": "^2.0.2",
     "auto-changelog": "^2.4.0",
-    "autoprefixer": "^10.4.8",
+    "autoprefixer": "^10.4.9",
     "fs-extra": "^10.1.0",
     "happy-dom": "^6.0.4",
     "lodash": "^4.17.21",
