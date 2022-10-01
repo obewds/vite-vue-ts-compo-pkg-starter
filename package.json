@@ -67,7 +67,7 @@
     "vite": "^3.1.0",
     "vitepress": "^1.0.0-alpha.13",
     "vitest": "^0.23.2",
-    "vue": "^3.2.39",
+    "vue": "^3.2.40",
     "vue-tsc": "^0.40.13"
   },
   "repository": {
