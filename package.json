@@ -54,7 +54,7 @@
     "@types/node": "^18.8.3",
     "@vitejs/plugin-vue": "^3.1.2",
     "@vitest/coverage-c8": "^0.23.4",
-    "@vue/test-utils": "^2.1.0",
+    "@vue/test-utils": "^2.2.4",
     "auto-changelog": "^2.4.0",
     "autoprefixer": "^10.4.12",
     "fs-extra": "^10.1.0",
